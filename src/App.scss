@@ -1,0 +1,94 @@
+:root {
+  --secondary-font: 'Playfair Display', serif;
+  
+  --black-color: #000;
+  --white-color: #fff;
+  --gray-color: #f5f5f5;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app__container {
+  width: 100%;
+  height: 110vh; 
+
+  direction: flex;
+  flex-direction: row;
+
+}
+
+p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+
+.head-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: var(--secondary-font);
+  color: var(--black-color);
+  text-transform: capitalize;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+
+h1{
+  font-family: var(--secondary-font);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);  
+}
+
+// make a button with black background and white text
+.button-secondary {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  
+  border: none;
+  border-radius: 0.4rem;
+
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background-color: var(--black-color);
+    color: var(--white-color);
+  }
+}
+
+.learn-more {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--black-color);
+  text-transform: capitalize;
+  margin-top: 1rem;
+  display: inline-block;
+  border-bottom: 1px solid var(--black-color);
+}
