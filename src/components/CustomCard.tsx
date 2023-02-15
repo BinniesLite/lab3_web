@@ -1,28 +1,31 @@
-import React from 'react'
+
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 
-import project_1 from '../assets/project_1.jpg';
+
 
 interface CardProps {
     img: string;
     date: string;
     description: string;
+    title: string;
 }
 
-const CustomCard = ({img, date, description}: CardProps) => {
+const CustomCard = ({img, date, description, title}: CardProps) => {
   return (
-    <Card variant="outlined">
-      <CardMedia sx={{width: {xs: '200px', md: '400px'}}} component="img" alt={'this is new'} image={project_1} />
+    <Card variant="outlined" sx={{p: 3}}>
+      <CardMedia sx={{width: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }} component="img" alt={'this is new'} image={img} />
         <CardContent>
           <Typography variant="subtitle1" color="text.secondary" component="div">
-            July 2021
+            {date}
           </Typography>
-          Hi guys its pewdiepie An ai That can generate fakes news and hurt the community
+          <Typography  color="text.primary" component="div">
+            {title}
+            </Typography>
         </CardContent>
         <CardActions >
           <div className='button-primary'>Learn More</div>

@@ -13,4 +13,4 @@ const Header = () => {
   )
 }
 
-export default Wrapper(Header, 'header');
+export default Wrapper(Header, 'home');

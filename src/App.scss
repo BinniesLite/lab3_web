@@ -22,7 +22,8 @@
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  
   line-height: 1.5;
 }
 
@@ -57,9 +58,25 @@ h2 {
   margin-bottom: 1rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
 a {
   text-decoration: none;
-  color: var(--black-color);  
+
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }
 
 // make a button with black background and white text
@@ -110,6 +127,19 @@ a {
 
   &:hover {
    
+    color: var(--gray-color);
+  }
+}
+
+// make a link that when hover turn to gray color 
+.link {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.07s linear;
+
+  &:hover {
     color: var(--gray-color);
   }
 }

@@ -2,40 +2,55 @@ import React, { useContext } from 'react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { Box, Typography } from '@mui/material';
 
+import CustomCard from './CustomCard';
 
-import RightArrowIcon from '../assets/icons/right-arrow.png';
-import LeftArrowIcon from '../assets/icons/left-arrow.png';
+import { Work } from '../constants/work';
 
-const LeftArrow = () => {
-  const { scrollPrev } = useContext(VisibilityContext);
+import RightArrowIcon from '../assets/icons/right-arrow.svg';
+import LeftArrowIcon from '../assets/icons/left-arrow.svg';
 
+import useDrag from '../hooks/useDrag';
+
+type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
+
+
+interface HorizontalScrollbarProps {
+  works: Work[];
+}
+
+
+const HorizontalScrollbar = ({ works }: HorizontalScrollbarProps) => {
+  const { dragStart, dragStop, dragMove, dragging } = useDrag();
+  const handleDrag = ({ scrollContainer }: scrollVisibilityApiType) => (
+    ev: React.MouseEvent
+  ) =>
+    dragMove(ev, (posDiff) => {
+      if (scrollContainer.current) {
+        scrollContainer.current.scrollLeft += posDiff;
+      }
+    });
+
+  const [selected, setSelected] = React.useState<string>("");
+  const handleItemClick = (itemId: string) => () => {
+    if (dragging) {
+      return false;
+    }
+    setSelected(selected !== itemId ? itemId : "");
+  };
   return (
-    <Typography onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="right-arrow" />
-    </Typography>
-  );
-};
-
-const RightArrow = () => {
-  const { scrollNext } = useContext(VisibilityContext);
-
-  return (
-    <Typography onClick={() => scrollNext()} className="left-arrow">
-      <img src={RightArrowIcon} alt="right-arrow" />
-    </Typography>
-  );
-};
-
-const HorizontalScrollbar = ({ data }) => (
-  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-    {data.map((item, key) => (
-      <Box
-        key={key}
-      >
-        
+  <div onMouseLeave={dragStop}>
+    <ScrollMenu
+      onMouseDown={() => dragStart}
+      onMouseUp={() => dragStop}
+      onMouseMove={handleDrag}
+    >
+      {works.map((work, key) => (
+        <Box key={key}>
+          <CustomCard title={work.title} description={work.description} date={work.date} img={work.image}  />
       </Box>
-    ))}
-  </ScrollMenu>
-);
+      ))}
+    </ScrollMenu>
+  </div>)
+};
 
 export default HorizontalScrollbar;
