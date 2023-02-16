@@ -30,22 +30,22 @@ export const works: Work[] = [
     },
     {
         id: 3,
-        title: 'Project 1',
+        title: 'Google SEO',
         description: 'Web generation and text summarization',
         date: 'December 2023',
         image: project3,
     },
     {
         id: 4,
-        title: 'Project 1',
+        title: 'Networking with AI Content',
         description: 'Random content generator',
         date: 'January 2020',
         image: project4,
     },
     {
         id: 5,
-        title: 'Project 1',
-        description: 'Project 1 description',
+        title: 'Fill with the unfillable void',
+        description: 'This is the unfillable void of the human psychology heart',
         date: 'June 2020',
         image: project1,
     }

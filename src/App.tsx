@@ -1,15 +1,12 @@
 import React, {lazy, Suspense} from 'react';
-
 import Navbar from './components/Navbar/Navbar'; 
-import Header from './pages/Header/Header';  
-import About from './pages/About/About';
 import Footer from './pages/Footer/Footer';
-const Contact = lazy(() => import('./pages/Contact/Contact'));
+import Contact from './pages/Contact/Contact';
 
-import Projects from './pages/Projects/Projects';
-
+import Home from './pages/Home';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 import './App.scss'
 
@@ -17,11 +14,16 @@ function App() {
 
   return (
     <div className=''>
+      
+      <Router>
       <Navbar/>
-      <Header/>
-      <Projects />
-      <About/>
-      <Contact />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/contact" element={<Contact/>}/>
+        </Routes>
+      </Router>
+    
+      {/* <Contact /> */}
       <Footer />
     </div>
   )

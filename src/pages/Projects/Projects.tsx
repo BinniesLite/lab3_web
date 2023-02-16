@@ -1,13 +1,8 @@
-import React from 'react'
 import Wrapper from '../../layout/Wrapper';
 
-import { Box } from '@mui/material';
 import { Stack } from '@mui/material';
-
 import { works } from '../../constants/work';
-
 import HorizontalScrollbar from '../../components/HorizontalScroll';
-
 import Section from '../../components/Section';
 
 import "./Projects.scss";
@@ -19,7 +14,7 @@ export const Projects = () => {
         <Stack>
           <HorizontalScrollbar works={works} />
         </Stack>
-
+        
     </Section>
   )
 }

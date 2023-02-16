@@ -18,7 +18,7 @@ interface CardProps {
 const CustomCard = ({img, date, description, title}: CardProps) => {
   return (
     <Card variant="outlined" sx={{p: 3}}>
-      <CardMedia sx={{width: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }} component="img" alt={'this is new'} image={img} />
+      <CardMedia sx={{width: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }} loading="lazy" component="img" alt={'this is new'} image={img} />
         <CardContent>
           <Typography variant="subtitle1" color="text.secondary" component="div">
             {date}
