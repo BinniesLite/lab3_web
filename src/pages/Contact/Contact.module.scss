@@ -10,13 +10,13 @@
   }
   
   .input-field {
-    padding: 0.5em 0.75em;
+    padding: 0.5em 1.5em;
     border-radius: 0.2em;
     border: 1px solid var(--c-border, currentColor);
     color: var(--c-text);
     font-size: 1rem;
     letter-spacing: 0.1ch;
-    width: 100%;
+    max-width: 18rem;
   }
   
   .input-field:not(:placeholder-shown) + .input-label {

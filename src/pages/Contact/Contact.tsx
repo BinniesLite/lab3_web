@@ -6,23 +6,46 @@ import Wrapper from '../../layout/Wrapper'
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
+import styles from './Contact.module.scss'
 
 
 const Contact = () => {
 
   return (
-    <Stack sx={{}} justifyContent="flex-start" alignItems="center" minHeight="inherit" width='100%'>
-      <Box height="20vh"></Box>
-      <h1>Contact</h1>
-      <Stack width="50%" flexDirection="row" justifyContent="space-between">
-        <Stack>
-          <p>Phone: 123-456-7890</p>
-        <p>Email:
-          <a href="mailto:leqn@mail.uc.edu">  </a> 
-        </p>
-        </Stack>
-        <Stack>
-          dasd
+    <Stack sx={{mt: {xs: '13rem', md: '1rem'}}} justifyContent="center" alignItems="center" minHeight="inherit" width='100%'>
+      <h1 style={{marginTop: '2.4rem'}}>Contact</h1>
+      <Stack width="40%" flexDirection={{xs: 'column', md: 'row'}} justifyContent={'flex-start'}>
+       
+        <Stack my={2} rowGap={5} component="form">
+          <p className={styles['input-container']}>
+            <input 
+              autoComplete='name' 
+              className={styles['input-field']} 
+              id="text" 
+              name="text" 
+              placeholder="Your name" type="text" />
+            <label for="text" className={styles['input-label']}>Name</label>
+          </p>
+          <p className={styles['input-container']}>
+            <input 
+              autoComplete='name' 
+              className={styles['input-field']} 
+              id="text" 
+              name="text" 
+              placeholder="Your email" type="text" />
+            <label for="text" className={styles['input-label']}>Email </label>
+          </p>
+          <p className={styles['input-container']}>
+          <textarea 
+              autoComplete='name' 
+              className={styles['input-field']} 
+              id="text" 
+              name="text" 
+              placeholder="Message us" />
+            <label for="text" className={styles['input-label']}>Message</label>
+          </p>
+          
+          <button className='button-secondary' type="submit">Send</button>
         </Stack>
       </Stack>
     </Stack>

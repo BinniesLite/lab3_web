@@ -14,7 +14,9 @@ const Navbar = () => {
     return (
         <Stack sx={{width: '100%', my: 3, transition: '0.7s all ease-in', position: 'absolute'}} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4}}>
-                <Typography sx={{fontWeigth: '700'}} variant="body2">MahdiLab</Typography>
+                <Link to="/">
+                    <Typography sx={{fontWeigth: '800'}} variant="body1">MahdiLab</Typography>
+                </Link>
             </Box>
             <Stack sx={{fontWeight: 700, mr: 13, flexDirection: {xs: 'column', md: 'row'}, rowGap: {xs: 0.8} }} columnGap="4rem">
                 {links.map((link, key) => (
