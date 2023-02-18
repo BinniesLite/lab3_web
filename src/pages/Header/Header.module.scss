@@ -1,13 +1,22 @@
-
+.app__wrapper-img {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/header1.jpg);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    position: absolute;
+    z-index: -3;
+}
 
 .app__header {
     width: 100%;
-    min-height: inherit;
+    min-height: 100vh;
 
     display: grid; 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-
+    
     video {
         position: absolute;
         top: 0;

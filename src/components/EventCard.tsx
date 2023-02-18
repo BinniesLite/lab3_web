@@ -21,7 +21,7 @@ const EventCard = ({ events }: EventCardProps) => {
                 </Typography>
             </Grid>
             
-                <Grid rowSpacing={3} rowGap={4} item xs={12} md={6}>
+                <Grid rowSpacing={3} rowGap={3} item xs={12} md={6}>
                     {eventsList.map((event, key) => (
                         <Box sx={{marginBottom: 8}}>
                             <a style={{marginBottom: '0.5rem', marginTop: '0.5rem'}} href="" key={key}>

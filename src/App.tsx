@@ -12,7 +12,7 @@ import './App.scss'
 function App() {
 
   return (
-    <div className=''>
+  <div className=''>
       <Router>
       <Navbar/>
         <Routes>
