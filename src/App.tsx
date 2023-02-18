@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 
 const Footer = lazy(() => import('./pages/Footer/Footer'));
 import Home from './pages/Home';
-const Contact = lazy(() => import('./pages/Contact/Contact'));
+import Contact from './pages/Contact/Contact';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div className=''>
-      
       <Router>
       <Navbar/>
         <Routes>
