@@ -16,9 +16,9 @@ const EventCard = ({ events }: EventCardProps) => {
     return (
         <>
             <Grid item xs={12} md={6}>
-                <Typography variant="subtitle1" color="text.secondary" component="div">
-                    {year}
-                </Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+                {year}
+            </Typography>
             </Grid>
             
                 <Grid rowSpacing={3} rowGap={3} item xs={12} md={6}>
