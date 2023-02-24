@@ -22,7 +22,7 @@ const Navbar = () => {
                     <Typography sx={{fontWeigth: '800'}} variant="body1">MahdiLab</Typography>
                 </Link>
             </Box>
-            <Stack sx={{fontWeight: 700, mr: 13, flexDirection: {xs: 'column', md: 'row'}, rowGap: {xs: 1.5}}} columnGap="4rem">
+            <Stack sx={{fontWeight: 700, mr: 13, flexDirection: {xs: 'column', md: 'row'}, rowGap: {xs: 1.5}, justifyContent: {xs: 'flex-end', md: ''}}} columnGap="4rem">
                 
                 {location.pathname === '/contact'  ? <Link to="/">Home</Link> : 
                     (

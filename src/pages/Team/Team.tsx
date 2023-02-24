@@ -14,7 +14,7 @@ const Team = () => {
     getAllMembers().then(
       res => setMembers(res))
   }, [])
-
+  console.log(members);
   return (
     <div>
       <Stack sx={{ mb: '5rem', paddingBottom: 4 }} justifyContent="center" alignItems="center" minHeight="inherit" width='100%'>
@@ -23,7 +23,7 @@ const Team = () => {
           </br> world for society, we hope to have a good day and change the world blah blah blah blah blah</h4>
       </Stack>
       <Section>
-          <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={5} flexDirection="row">
+          <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={5} flexDirection={{md: 'row', xs: 'column'}}>
             {members.map((member, key) => (
               <TeamCard member={member} key={key} />
             ))}
