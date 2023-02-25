@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Wrapper from '../../layout/Wrapper';
 import Section from '../../components/Section';
-import { getAllMembers } from '../../api/database-query';
+import { getAllMembers, getProjectsForMember } from '../../api/database-query';
 import TeamCard from '../../components/Team/TeamCard';
 
 import Stack from '@mui/material/Stack';
@@ -9,12 +9,14 @@ import Stack from '@mui/material/Stack';
 
 const Team = () => {
   const [members, setMembers] = useState([]);
-  
+  const [membersProject, setMembersProject] = useState([]);
+
   useEffect(() => {
     getAllMembers().then(
-      res => setMembers(res))
-  }, [])
-  console.log(members);
+      res => setMembers(res));
+  }, []);  
+  
+
   return (
     <div>
       <Stack sx={{ mb: '5rem', paddingBottom: 4 }} justifyContent="center" alignItems="center" minHeight="inherit" width='100%'>
