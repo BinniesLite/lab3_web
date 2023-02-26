@@ -16,28 +16,34 @@ const Navbar = () => {
     
     const isContact = location.pathname === '/contact';
     return (
-        <Stack sx={{width: '100%', my: 3, transition: '0.7s all ease-in', position: `absolute`}} flexDirection="row" justifyContent="space-between" >
+        <Stack sx={{width: '100%', my: 3, transition: '0.7s all ease-in', position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`}} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4, color: `${isContact || location.pathname === "/team" ? 'black' : 'white'}`}}>
                 <Link to="/">
                     <Typography sx={{fontWeigth: '800'}} variant="body1">MahdiLab</Typography>
                 </Link>
             </Box>
-            <Stack sx={{fontWeight: 700, mr: 13, flexDirection: {xs: 'column', md: 'row'}, rowGap: {xs: 1.5}, justifyContent: {xs: 'flex-end', md: ''}}} columnGap="4rem">
+            <Stack sx={{fontWeight: 700, 
+                mr: 13, 
+                flexDirection: {xs: 'column', md: 'row'}, 
+                rowGap: {xs: 1.5}, 
+                justifyContent: {xs: 'flex-end', md: ''},
+                color: `${isContact || location.pathname === "/team" ? 'black' : 'white'}`}} 
+                columnGap="4rem">
                 
                 {location.pathname === '/contact'  ? <Link to="/">Home</Link> : 
                     (
                         <>
                 {links.map((link, key) => (
-                    <a style={{color: `${isContact || location.pathname === "/team" ? 'black' : 'white'}`}} className={`${active === link && 'active-link'}`} 
+                    <a style={{}} className={`${active === link && 'active-link'}`} 
                         key={key} 
                         href={`#${link.toLowerCase()}`}
                         onClick={() => setActive(link)}
                     >
                 {link}
                 </a>))}
-                    <Link to="/contact"><a style={{color: 'white'}} href="">Contact</a></Link>
-                    <Link to="/team"><a style={{color: 'white'}} href="">Our Team</a></Link>
-                        </>
+                    <Link to="/contact"><a href="">Contact</a></Link>
+                    <Link to="/team"><a  href="">Our Team</a></Link>
+                    </>
 
                     )
                 }

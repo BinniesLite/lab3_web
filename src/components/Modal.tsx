@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
+import Divider from '@mui/material/Divider';
 
 import { db } from '../firebase/firebase';
 import {getDocs} from 'firebase/firestore';
@@ -37,6 +38,8 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                         <Box width="300px" height="400px" >
                             <img style={{width: 'inherit', height: 'inherit'}} src={image} alt="" />
                         </Box>
+
+                        <Divider orientation="vertical" flexItem />   
                         <Stack>
                         <Typography component="div" variant="h4">
                             A little bit about me...    

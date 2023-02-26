@@ -13,7 +13,6 @@ import arrowUp from '../../assets/icons/arrow-up.png';
 
 import Modal from '../Modal';
 
-import { getProjectsForMember } from '../../api/database-query';
 interface TeamCardProps {
     member: any;
 }
@@ -27,25 +26,26 @@ const TeamCard = ({ member }: TeamCardProps) => {
             height: { md: '400px', sm: '400px', xs: '100%' },
         }}>
             <CardMedia
-                height="180px"
+                height="300px"
+                width="300px"
                 component="img"
-                image={project1}
+                image={member?.image}
             />
             <CardContent>
                 <Stack rowGap={3} flexDirection="column" alignItems="center" justifyContent="center">
                     <Typography sx={{ mt: 2 }} variant="h6" component="div">
-                        {member.firstName} {member.lastName}
+                        {member.name}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
-                        {member.position}
+                        {member?.position}
                     </Typography>
 
-                    <Modal
-                        projects={member.projects}
+                    {/* <Modal
+                        projects={member?.projects}
                         image={project1}
                         description={member.description}
                         active={active}
-                        setActive={setActive} />
+                        setActive={setActive} /> */}
                 </Stack>
                 <CardActions>
                     <Box onClick={() => setActive(prev => !prev)}>
