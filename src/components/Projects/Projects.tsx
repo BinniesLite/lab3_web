@@ -2,8 +2,8 @@ import Wrapper from '../../layout/Wrapper';
 
 import { Stack } from '@mui/material';
 import { works } from '../../constants/work';
-import HorizontalScrollbar from '../../components/HorizontalScroll';
-import Section from '../../components/Section';
+import HorizontalScrollbar from '../HorizontalScroll';
+import Section from '../Section';
 
 import "./Projects.scss";
 

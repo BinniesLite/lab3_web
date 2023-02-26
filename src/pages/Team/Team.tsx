@@ -13,7 +13,7 @@ import Box from '@mui/material/Box'
 const Team = () => {
   const [members, setMembers] = useState([]);
   const [membersProject, setMembersProject] = useState([]);
-  
+
   useEffect(() => {
     getAllMember().then((res) => {
       setMembers(res.data);
@@ -22,24 +22,23 @@ const Team = () => {
 
 
   return (
-    <Box sx={{backgroundColor: '#f6f6f4'}}>
+    <Box sx={{ backgroundColor: '#f6f6f4' }}>
       <Section>
-        <>
-          <Stack sx={{ mb: '5rem', pt: "10rem" }} justifyContent="flex-start" alignItems="flex-start" minHeight="inherit" width='100%'>
-            <div className={`head-text `}>
-              We shape the future of summarization <br />
-              and build bussiness that help the world
-            </div>
+        <Stack sx={{ mb: '5rem', pt: "10rem" }} justifyContent="flex-start" alignItems="flex-start" minHeight="inherit" width='100%'>
+          <div className={`head-text `}>
+            We shape the future of summarization <br />
+            and build bussiness that help the world
+          </div>
+        </Stack>
+        <Section>
+          <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={5} flexDirection={{ md: 'row', xs: 'column' }}>
+            {members.map((member, key) => (
+              <TeamCard member={member} key={key} />
+            ))}
           </Stack>
-          <Section>
-            <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={5} flexDirection={{ md: 'row', xs: 'column' }}>
-              {members.map((member, key) => (
-                <TeamCard member={member} key={key} />
-              ))}
-            </Stack>
-          </Section>
-        </>
+        </Section>
       </Section>
+
     </Box>
   )
 }

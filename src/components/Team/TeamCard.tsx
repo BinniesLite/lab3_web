@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActions } from '@material-ui/core';
 
-import project1 from '../../assets/project_1.jpg';
+import { getMemberProjects } from '../../api/http-request';
 import arrowUp from '../../assets/icons/arrow-up.png';
 
 import Modal from '../Modal';
@@ -19,11 +19,19 @@ interface TeamCardProps {
 
 const TeamCard = ({ member }: TeamCardProps) => {
     const [active, setActive] = React.useState(false);
+    const [membersProject, setMembersProject] = React.useState([]);
+
+    useEffect(() => {
+        getMemberProjects(member.id).then((res) => {
+            setMembersProject(res.data);
+        })}, [member.id])
+
+
     return (
         <Card sx={{
             position: 'relative', boxShadow: 'none',
             width: { md: '320px', sm: '370px', xs: '100%' },
-            height: { md: '400px', sm: '400px', xs: '100%' },
+            
         }}>
             <CardMedia
                 height="300px"
@@ -32,7 +40,7 @@ const TeamCard = ({ member }: TeamCardProps) => {
                 image={member?.image}
             />
             <CardContent>
-                <Stack rowGap={3} flexDirection="column" alignItems="center" justifyContent="center">
+                <Stack rowGap={1} columnGap={2} flexDirection="column" alignItems="start" justifyContent="center">
                     <Typography sx={{ mt: 2 }} variant="h6" component="div">
                         {member.name}
                     </Typography>
@@ -40,12 +48,12 @@ const TeamCard = ({ member }: TeamCardProps) => {
                         {member?.position}
                     </Typography>
 
-                    {/* <Modal
-                        projects={member?.projects}
-                        image={project1}
+                    <Modal
+                        projects={membersProject}
+                        image={member?.image}
                         description={member.description}
                         active={active}
-                        setActive={setActive} /> */}
+                        setActive={setActive} />
                 </Stack>
                 <CardActions>
                     <Box onClick={() => setActive(prev => !prev)}>

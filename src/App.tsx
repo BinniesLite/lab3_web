@@ -1,6 +1,6 @@
 import React, {lazy, Suspense} from 'react';
 import Navbar from './components/Navbar/Navbar'; 
-const Footer = lazy(() => import('./pages/Footer/Footer'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
 import Home from './pages/Home';
 import Contact from './pages/Contact/Contact';
 import Team from './pages/Team/Team';

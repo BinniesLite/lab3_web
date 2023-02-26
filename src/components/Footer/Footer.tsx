@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SocialMedia from '../../components/SocialMedia';
+import SocialMedia from '../SocialMedia';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';

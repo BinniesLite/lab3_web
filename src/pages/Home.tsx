@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../pages/Header/Header'
-import Projects from './Projects/Projects'
+import Projects from '../components/Projects/Projects'
 import About from './About/About'
 
 const Home = () => {

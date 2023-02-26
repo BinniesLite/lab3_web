@@ -11,8 +11,6 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 
-import { db } from '../firebase/firebase';
-import {getDocs} from 'firebase/firestore';
 
 interface ModalProps {
     active: boolean;
@@ -51,7 +49,7 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                     </Stack>
                 </DialogContentText>
             </DialogContent>
-            <DialogActions>
+            <DialogActions sx={{p: 3}}>
             {projects && projects.map((project: any, key: number) => (
                <Chip label={project.name} key={key} clickable />))}
             </DialogActions>
