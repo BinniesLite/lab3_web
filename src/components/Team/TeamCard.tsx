@@ -29,9 +29,12 @@ const TeamCard = ({ member }: TeamCardProps) => {
 
 
     return (
-        <Card sx={{
+        <Card 
+        onClick={() => setActive(prev => !prev)}
+        sx={{
             position: 'relative', boxShadow: 'none',
             width: { md: '230px', sm: '370px', xs: '100%' },
+            cursor: "pointer"
         }}>
             <CardMedia
                 sx={{ objectFit: 'cover', objectPosition: 'center' }}

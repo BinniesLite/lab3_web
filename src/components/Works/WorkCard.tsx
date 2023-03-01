@@ -38,14 +38,14 @@ const WorkCard = ({ img, date, description, title }: CardProps) => {
 
 
     return (
-        <Card classes={{root: customCardStyle.root}} sx={{ p: 3 }}>
+        <Card classes={{root: customCardStyle.root}} sx={{ p: 3, cursor: 'pointer' }}>
             <CardMedia sx={{ width: { xs: '300px' }, height: { xs: '300px' } }} component="img" alt={'this is new'} image={img} />
             <CardContent classes={{root: customCardContent.root}}>
                 <Typography color="text.primary" fontWeight="bold" component="div">
                     {title}
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary" component="div">
-                    {date}
+                  July 17 2023
                 </Typography>
             </CardContent>
           

@@ -19,7 +19,7 @@ const Navbar = () => {
     // change the color of the navbar when the user is on the different pages
     const currentPath = () => {
         if (location.pathname === '/') {
-            return 'home'
+            return 'white'
         } else if (location.pathname === '/contact') {
             return 'contact'
         } else if (location.pathname === '/team') {
@@ -32,10 +32,11 @@ const Navbar = () => {
     return (
         <Stack sx={{width: '100%', 
         my: 3, 
-        transition: '0.7s all ease-in', 
+        transition: '0.3s all ease-in', 
         position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`
         ,
         color: `${currentPath()}`
+
         }} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4, }}>
                 <Link to="/">

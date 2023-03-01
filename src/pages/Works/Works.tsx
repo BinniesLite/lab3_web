@@ -7,8 +7,9 @@ import Section from '../../components/Section';
 import WorkCard from '../../components/Works/WorkCard';
 
 import { getAllProjects } from '../../api/http-request';
-
 import Modal from '../../components/Modal';
+
+import Wrapper from '../../layout/Wrapper';
 
 const useStyles = makeStyles({
   root: {
