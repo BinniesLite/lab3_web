@@ -39,12 +39,12 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
 
                         <Divider orientation="vertical" flexItem />   
                         <Stack>
-                        <Typography component="div" variant="h4">
-                            A little bit about me...    
+                        <Typography color="black" component="div" variant="h4" fontWeight="bold">
+                            About Me  
                         </Typography> 
-                        <div>
+                        <Typography component="div" variant='body1'  >
                             {description}
-                        </div>
+                        </Typography>
                         </Stack>
                     </Stack>
                 </DialogContentText>

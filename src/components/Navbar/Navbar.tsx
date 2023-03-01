@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 
-const links = ['Home', 'Project', 'About']
+const links = ['Home', 'About']
 
 const Navbar = () => {
     const [active, setActive] = useState(links[0]);
@@ -15,9 +15,29 @@ const Navbar = () => {
     const location = useLocation();
     
     const isContact = location.pathname === '/contact';
+
+    // change the color of the navbar when the user is on the different pages
+    const currentPath = () => {
+        if (location.pathname === '/') {
+            return 'home'
+        } else if (location.pathname === '/contact') {
+            return 'contact'
+        } else if (location.pathname === '/team') {
+            return 'team'
+        } else if (location.pathname === '/work') {
+            return '#4e5b47'
+        }
+    }    
+
     return (
-        <Stack sx={{width: '100%', my: 3, transition: '0.7s all ease-in', position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`}} flexDirection="row" justifyContent="space-between" >
-            <Box sx={{ml: 4, color: `${isContact || location.pathname === "/team" ? 'black' : 'white'}`}}>
+        <Stack sx={{width: '100%', 
+        my: 3, 
+        transition: '0.7s all ease-in', 
+        position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`
+        ,
+        color: `${currentPath()}`
+        }} flexDirection="row" justifyContent="space-between" >
+            <Box sx={{ml: 4, }}>
                 <Link to="/">
                     <Typography sx={{fontWeigth: '800'}} variant="body1">MahdiLab</Typography>
                 </Link>
@@ -26,8 +46,7 @@ const Navbar = () => {
                 mr: 13, 
                 flexDirection: {xs: 'column', md: 'row'}, 
                 rowGap: {xs: 1.5}, 
-                justifyContent: {xs: 'flex-end', md: ''},
-                color: `${isContact || location.pathname === "/team" ? 'black' : 'white'}`}} 
+                justifyContent: {xs: 'flex-end', md: ''} } } 
                 columnGap="4rem">
                 
                 {location.pathname === '/contact'  ? <Link to="/">Home</Link> : 
@@ -41,7 +60,7 @@ const Navbar = () => {
                     >
                 {link}
                 </a>))}
-                    <Link to="/contact"><a href="">Contact</a></Link>
+                    <Link to="/work"><a href="">Works</a></Link>
                     <Link to="/team"><a  href="">Our Team</a></Link>
                     </>
 

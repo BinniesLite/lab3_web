@@ -4,6 +4,7 @@ const Footer = lazy(() => import('./components/Footer/Footer'));
 import Home from './pages/Home';
 import Contact from './pages/Contact/Contact';
 import Team from './pages/Team/Team';
+import Works from './pages/Works/Works';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/team" element={<Team/>}/>
+          <Route path="/work" element={<Works/>}/>
         </Routes>
       </Router>
     

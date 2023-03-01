@@ -19,3 +19,8 @@ export const getAllMember = () => {
 export const getMemberProjects = (id: number) => {
     return HttpInstance.get(`members/${id}/projects/`);
 }
+
+export const getAllProjects = () => {
+    return HttpInstance.get("projects/list/");
+}
+
