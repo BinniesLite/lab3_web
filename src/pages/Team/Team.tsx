@@ -22,7 +22,7 @@ const Team = () => {
 
 
   return (
-    <Box sx={{ backgroundColor: '#f6f6f4' }}>
+    <Box sx={{ backgroundColor: '#f6f6f4', width: '100%' }}>
       <Section>
         <Stack sx={{ mb: '5rem', pt: "10rem" }} justifyContent="flex-start" alignItems="flex-start" minHeight="inherit" width='100%'>
           <div className={`head-text `}>
@@ -31,7 +31,7 @@ const Team = () => {
           </div>
         </Stack>
         <Section>
-          <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={5} flexDirection={{ md: 'row', xs: 'column' }}>
+          <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={8} flexDirection={{ md: 'row', xs: 'column' }}>
             {members.map((member, key) => (
               <TeamCard member={member} key={key} />
             ))}

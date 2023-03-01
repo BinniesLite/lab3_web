@@ -24,28 +24,33 @@ const TeamCard = ({ member }: TeamCardProps) => {
     useEffect(() => {
         getMemberProjects(member.id).then((res) => {
             setMembersProject(res.data);
-        })}, [member.id])
+        })
+    }, [member.id])
 
 
     return (
         <Card sx={{
             position: 'relative', boxShadow: 'none',
-            width: { md: '320px', sm: '370px', xs: '100%' },
-            
+            width: { md: '230px', sm: '370px', xs: '100%' },
         }}>
             <CardMedia
-                height="300px"
-                width="300px"
+                sx={{ objectFit: 'cover', objectPosition: 'center' }}
+                height="220px"
+                
                 component="img"
                 image={member?.image}
             />
             <CardContent>
-                <Stack rowGap={1} columnGap={2} flexDirection="column" alignItems="start" justifyContent="center">
-                    <Typography sx={{ mt: 2 }} variant="h6" component="div">
-                        {member.name}
+                <Stack columnGap={2} flexDirection="column" alignItems="start" justifyContent="center">
+                    <Typography color="text.primary" variant="h6" component="div">
+                        {member?.name}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
-                        {member?.position}
+                        <Stack flexDirection="row">
+                            {member?.position} <Box onClick={() => setActive(prev => !prev)}>
+                            <img style={{width: '18px'}} src={arrowUp} alt=""  />
+                                                </Box>
+                        </Stack>
                     </Typography>
 
                     <Modal
@@ -54,11 +59,10 @@ const TeamCard = ({ member }: TeamCardProps) => {
                         description={member.description}
                         active={active}
                         setActive={setActive} />
+                    
                 </Stack>
                 <CardActions>
-                    <Box onClick={() => setActive(prev => !prev)}>
-                        <img src={arrowUp} alt="" />
-                    </Box>
+
                 </CardActions>
             </CardContent>
             {/* */}
