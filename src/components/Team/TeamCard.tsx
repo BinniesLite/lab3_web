@@ -12,6 +12,7 @@ import { getMemberProjects } from '../../api/http-request';
 import arrowUp from '../../assets/icons/arrow-up.png';
 
 import Modal from '../Modal';
+import { Link } from 'react-router-dom';
 
 interface TeamCardProps {
     member: any;
@@ -26,6 +27,7 @@ const TeamCard = ({ member }: TeamCardProps) => {
             setMembersProject(res.data);
         })
     }, [member.id])
+    
 
 
     return (

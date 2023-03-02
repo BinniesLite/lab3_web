@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 const baseURL = "http://127.0.0.1:8000/api/"
@@ -24,3 +25,10 @@ export const getAllProjects = () => {
     return HttpInstance.get("projects/list/");
 }
 
+export const getProjectsDetail = (id: number | string) => {
+    return HttpInstance.get(`projects/${id}/`);
+}
+
+export const getImagesForProject = (id: number | string) => {
+    return HttpInstance.get(`images/${id}/`);
+}

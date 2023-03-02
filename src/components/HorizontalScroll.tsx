@@ -6,8 +6,10 @@ import CustomCard from './CustomCard';
 
 import { Work } from '../constants/work';
 
-import RightArrowIcon from '../assets/icons/right-arrow.svg';
-import LeftArrowIcon from '../assets/icons/left-arrow.svg';
+// import RightArrowIcon from '../assets/icons/right-arrow.svg';
+// import LeftArrowIcon from '../assets/icons/left-arrow.svg';
+
+import { Link } from 'react-router-dom';
 
 import useDrag from '../hooks/useDrag';
 
@@ -46,7 +48,7 @@ const HorizontalScrollbar = ({ works }: HorizontalScrollbarProps) => {
     >
       {works.map((work, key) => (
         <Box key={key}>
-          <CustomCard title={work.title} description={work.description} date={work.date} img={work.image}  />
+        <CustomCard id={work.id} title={work.name} description={work.description} date={work.date} img={work.image}  />
       </Box>
       ))}
     </ScrollMenu>

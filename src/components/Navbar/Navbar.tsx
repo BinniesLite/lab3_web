@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 
-const links = ['Home', 'About']
+const links = ['About']
 
 const Navbar = () => {
     const [active, setActive] = useState(links[0]);
@@ -53,6 +53,7 @@ const Navbar = () => {
                 {location.pathname === '/contact'  ? <Link to="/">Home</Link> : 
                     (
                         <>
+                        <Link to="/"><a href="">Home</a></Link>
                 {links.map((link, key) => (
                     <a style={{}} className={`${active === link && 'active-link'}`} 
                         key={key} 
@@ -61,7 +62,7 @@ const Navbar = () => {
                     >
                 {link}
                 </a>))}
-                    <Link to="/work"><a href="">Works</a></Link>
+                    <Link to="/work"><a href="">Research</a></Link>
                     <Link to="/team"><a  href="">Our Team</a></Link>
                     </>
 

@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 
 import Typography from '@mui/material/Typography';
 
+import { Link } from 'react-router-dom';
 
 
 interface CardProps {
@@ -13,22 +14,25 @@ interface CardProps {
     date: string;
     description: string;
     title: string;
+    id?: string;
 }
 
-const CustomCard = ({img, date, description, title}: CardProps) => {
+const CustomCard = ({img, date, description, title, id}: CardProps) => {
   return (
     <Card variant="outlined" sx={{p: 3}}>
-      <CardMedia sx={{width: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }} component="img" alt={'this is new'} image={img} />
+      <CardMedia sx={{minWidth: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }} component="img" alt={'this is new'} image={img} />
         <CardContent>
           <Typography variant="subtitle1" color="text.secondary" component="div">
-            {date}
+            July 18, 2021
           </Typography>
           <Typography  color="text.primary" component="div">
             {title}
             </Typography>
         </CardContent>
         <CardActions >
-          <div className='button-primary'>Learn More</div>
+        <Link to={`/work/${id}`}>
+            <div className='button-primary'>Learn More</div>
+          </Link>
         </CardActions>
     </Card>
   ) 

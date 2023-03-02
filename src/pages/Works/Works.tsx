@@ -29,6 +29,8 @@ const Works = () => {
     })
   }, [])
 
+ 
+
 
   return (
     <Stack sx={{width:'100%', minHeight: '100vh', bgColor: '#fff1d6'}}>
@@ -38,7 +40,7 @@ const Works = () => {
         <Stack rowGap={3} flexWrap="wrap" flexDirection="row">
            <>
            {projects.map((project, key) => (
-                <WorkCard key={key} img={project.image} date={project.date} description={project.description} title={project.name} />
+                <WorkCard id={project.id} key={key} img={project.image} date={project.date} description={project.description} title={project.name} />
               ))}
           </>
             

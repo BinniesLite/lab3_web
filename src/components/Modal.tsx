@@ -11,6 +11,8 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 
+import { Link } from 'react-router-dom';
+
 
 interface ModalProps {
     active: boolean;
@@ -22,6 +24,8 @@ interface ModalProps {
 
 
 const Modal = ({ active, setActive, description, image, projects }: ModalProps) => {    
+    
+    
     return (
         <Dialog
             open={active}
@@ -51,7 +55,13 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
             </DialogContent>
             <DialogActions sx={{p: 3}}>
             {projects && projects.map((project: any, key: number) => (
-               <Chip label={project.name} key={key} clickable />))}
+               
+               <Link key={key} to={`/work/${project.id}`}>
+                   <Chip label={project.name} key={key} clickable />
+               </Link>   
+            ))
+               
+            }
             </DialogActions>
 
         </Dialog>
