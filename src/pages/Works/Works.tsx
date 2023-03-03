@@ -43,7 +43,6 @@ const Works = () => {
                 <WorkCard id={project.id} key={key} img={project.image} date={project.date} description={project.description} title={project.name} />
               ))}
           </>
-            
         </Stack> 
         
       </Section>

@@ -6,6 +6,7 @@ import Contact from './pages/Contact/Contact';
 import Team from './pages/Team/Team';
 import Works from './pages/Works/Works';
 import WorkDetail from './pages/Works/WorkDetail';
+import Events from './pages/Events/Events';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/team" element={<Team/>}/>
           <Route path="/work" element={<Works/>}/>
           <Route path="/work/:id" element={<WorkDetail/>}/>
+          <Route path="/events" element={<Events/>}/>
         </Routes>
       </Router>
     

@@ -14,7 +14,7 @@ export const events: Events[] = [
         year: '2022',
         eventsList:  [
             {
-                eventTitle: 'World leading technolgoy',
+                eventTitle: '2022 Online Workshop for NTUT-UC Joint Research Program',
                 eventDescription: 'Announcement of the world leading technology - July 2022',
             },
             {

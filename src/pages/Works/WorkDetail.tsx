@@ -29,7 +29,11 @@ const WorkDetail = () => {
             setImages(res.data)
         })
     }, [])
-
+    
+    // Scroll to top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []); 
 
 
 
@@ -63,7 +67,7 @@ const WorkDetail = () => {
                     </Grid>
                 </Grid>
                 <Stack my={8}>
-                    <Typography variant="h5">
+                    <Typography sx={{mb: 2}} variant="h5">
                         Images
                     </Typography>
                     <Stack>

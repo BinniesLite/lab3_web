@@ -43,7 +43,8 @@ const Navbar = () => {
                     <Typography sx={{fontWeigth: '800'}} variant="body1">MahdiLab</Typography>
                 </Link>
             </Box>
-            <Stack sx={{fontWeight: 700, 
+            <Stack sx={{fontWeight: 500,
+                fontSize: '1.2rem',
                 mr: 13, 
                 flexDirection: {xs: 'column', md: 'row'}, 
                 rowGap: {xs: 1.5}, 
@@ -54,14 +55,7 @@ const Navbar = () => {
                     (
                         <>
                         <Link to="/"><a href="">Home</a></Link>
-                {links.map((link, key) => (
-                    <a style={{}} className={`${active === link && 'active-link'}`} 
-                        key={key} 
-                        href={`#${link.toLowerCase()}`}
-                        onClick={() => setActive(link)}
-                    >
-                {link}
-                </a>))}
+                    <Link to="/events">Events</Link>
                     <Link to="/work"><a href="">Research</a></Link>
                     <Link to="/team"><a  href="">Our Team</a></Link>
                     </>

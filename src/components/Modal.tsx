@@ -11,6 +11,8 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 
+import SocialMedia from './SocialMedia';
+
 import { Link } from 'react-router-dom';
 
 
@@ -49,7 +51,15 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                         <Typography component="div" variant='body1'  >
                             {description}
                         </Typography>
+                        <Stack color="black" mt={3}>
+                            <Typography color="black" component="div" variant="text.primary" fontWeight="bold">
+                                Social Media
+                            </Typography>
+                            <SocialMedia direction="row" />
                         </Stack>
+                        </Stack>
+                        
+                       
                     </Stack>
                 </DialogContentText>
             </DialogContent>
@@ -60,7 +70,7 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                    <Chip label={project.name} key={key} clickable />
                </Link>   
             ))
-               
+            
             }
             </DialogActions>
 

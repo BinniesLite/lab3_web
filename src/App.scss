@@ -33,7 +33,7 @@ p {
   font-weight: 700;
   text-align: center;
   font-family: var(--secondary-font);
-
+  color: inherit;
   text-transform: capitalize;
 
   @media screen and (min-width: 2000px) {
