@@ -23,7 +23,7 @@ const Navbar = () => {
         } else if (location.pathname === '/contact') {
             return 'contact'
         } else if (location.pathname === '/team') {
-            return 'team'
+            return '#2e712b'
         } else if (location.pathname === '/work') {
             return '#4e5b47'
         }
@@ -40,7 +40,7 @@ const Navbar = () => {
         }} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4, }}>
                 <Link to="/">
-                    <Typography sx={{fontWeigth: '800'}} variant="body1">MahdiLab</Typography>
+                    <Typography fontWeight="800"  sx={{fontWeigth: '500'}} variant="h6">MahdiLab</Typography>
                 </Link>
             </Box>
             <Stack sx={{fontWeight: 500,

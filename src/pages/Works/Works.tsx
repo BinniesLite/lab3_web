@@ -7,7 +7,7 @@ import Section from '../../components/Section';
 import WorkCard from '../../components/Works/WorkCard';
 
 import { getAllProjects } from '../../api/http-request';
-import Modal from '../../components/Modal';
+import Typography from '@mui/material/Typography';
 
 import Wrapper from '../../layout/Wrapper';
 
@@ -33,10 +33,17 @@ const Works = () => {
 
 
   return (
-    <Stack sx={{width:'100%', minHeight: '100vh', bgColor: '#fff1d6'}}>
+    <Stack sx={{width:'100%', backgroundColor: ''}}>
       <Section>
-        <h1>Works</h1>
-        <Divider sx={{borderBottomWidth: '3px', fontWeight: 'bold'}}  />
+      <Stack flexDirection={{ md: 'row', xs: 'column' }} justifyContent="space-between">
+                    <Typography variant="h1" fontWeight="500">
+                        Projects
+                    </Typography>
+                    <Typography gutterBottom variant='h5' color="text.primary">
+                        The future is here, we're always strive to improve ourself and the world
+                    </Typography>
+                </Stack>
+                <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black' }} />
         <Stack rowGap={3} flexWrap="wrap" flexDirection="row">
            <>
            {projects.map((project, key) => (

@@ -37,7 +37,10 @@ const TeamCard = ({ member }: TeamCardProps) => {
             position: 'relative', boxShadow: 'none',
             width: { md: '230px', sm: '370px', xs: '100%' },
             cursor: "pointer"
-        }}>
+        }}
+        variant="outlined"
+        elevation={16}
+        >
             <CardMedia
                 sx={{ objectFit: 'cover', objectPosition: 'center' }}
                 height="220px"
@@ -47,7 +50,7 @@ const TeamCard = ({ member }: TeamCardProps) => {
             />
             <CardContent>
                 <Stack columnGap={2} flexDirection="column" alignItems="start" justifyContent="center">
-                    <Typography color="text.primary" variant="h6" component="div">
+                    <Typography color="inherit" variant="h6" component="div">
                         {member?.name}
                     </Typography>
                     <Typography variant="subtitle1" color="text.secondary" component="div">
