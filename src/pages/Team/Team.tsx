@@ -5,6 +5,7 @@ import Section from '../../components/Section';
 import TeamCard from '../../components/Team/TeamCard';
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 
 import { getAllMember } from '../../api/http-request';
 
@@ -22,25 +23,26 @@ const Team = () => {
 
 
   return (
-    <Box sx={{ backgroundColor: '#f6f6f4', width: '100%' }}>
+    <Stack sx={{ backgroundColor: '#fde6ff', width: '100%', color: '#2e712b'}}>
       <Section>
-        <Stack sx={{ mb: '5rem', pt: "10rem" }} justifyContent="flex-start" alignItems="flex-start" minHeight="inherit" width='100%'>
-          <div className={`head-text `}>
-            We shape the future of summarization <br />
-            and build bussiness that help the world
-          </div>
+        <Stack flexDirection={{ md: 'row', xs: 'column' }} rowGap={3} justifyContent="space-between">
+          <Typography variant="h1" fontWeight="500">
+            Team
+          </Typography>
+          <Typography gutterBottom variant='h5' color="inherit">
+          Get to know our team of AI Scientist that are beneficial to the world. <br></br> We’re always looking for curious minds to join our team
+          </Typography>
         </Stack>
-        <Section>
+        <Divider sx={{fontWeight: 'bold', borderColor: 'black'}}/>
           <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={8} flexDirection={{ md: 'row', xs: 'column' }}>
             {members.map((member, key) => (
               <TeamCard member={member} key={key} />
             ))}
           </Stack>
-        </Section>
       </Section>
 
-    </Box>
+    </Stack>
   )
 }
 
-export default Wrapper(Team, 'team');
+export default Team;
