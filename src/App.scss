@@ -176,3 +176,21 @@ a, a:visited, a:hover, a:active {
   filter: invert(98%) sepia(43%) saturate(232%) hue-rotate(38deg) brightness(108%) contrast(94%);
   cursor: pointer;
 }
+
+
+// create a link with a black underline that turn to gray when hover
+.link-secondary {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.07s linear;
+  border-bottom: 1.8px solid var(--black-color);
+
+  font-weight: 800;
+
+  &:hover {
+    color: var(--gray-color);
+    border-color: var(--gray-color);
+  }
+}

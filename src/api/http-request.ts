@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const baseURL = "http://127.0.0.1:8000/api/"
+const baseURL = "https://mahdiweb.herokuapp.com/api/"
 
 const HttpInstance = axios.create({
     baseURL: baseURL,
@@ -31,4 +31,4 @@ export const getProjectsDetail = (id: number | string) => {
 
 export const getImagesForProject = (id: number | string) => {
     return HttpInstance.get(`images/${id}/`);
-}
+}   

@@ -7,20 +7,23 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 import { Link } from 'react-router-dom';
+import { Work } from '../constants/work';
 
+const MemoizedCardMedia = React.memo(CardMedia);
 
 interface CardProps {
-    img: string;
-    date: string;
-    description: string;
-    title: string;
-    id?: string;
+    img?: string;
+    date?: string;
+    description?: string;
+    title?: string;
+    id?: string | number;
+    name?: string,
 }
 
 const CustomCard = ({img, date, description, title, id}: CardProps) => {
   return (
     <Card variant="outlined" sx={{p: 3}}>
-      <CardMedia sx={{minWidth: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }} component="img" alt={'this is new'} image={img} />
+      <MemoizedCardMedia sx={{minWidth: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }}  image={img} />
         <CardContent>
           <Typography variant="subtitle1" color="text.secondary" component="div">
             July 18, 2021

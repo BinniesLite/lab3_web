@@ -27,7 +27,6 @@ interface ModalProps {
 
 const Modal = ({ active, setActive, description, image, projects }: ModalProps) => {    
     
-    
     return (
         <Dialog
             open={active}
@@ -39,7 +38,7 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
             <DialogContent >
                 <DialogContentText id="alert-dialog-description">
                     <Stack columnGap={5}  flexDirection="row">
-                        <Box width="300px" height="400px" >
+                        <Box width="300px" height="400px" sx={{display: {xs: 'none', md: 'block'}}} >
                             <img style={{width: 'inherit', height: 'inherit'}} src={image} alt="" />
                         </Box>
 
@@ -52,7 +51,7 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                             {description}
                         </Typography>
                         <Stack color="black" mt={3}>
-                            <Typography color="black" component="div" variant="text.primary" fontWeight="bold">
+                            <Typography color="black" component="div" fontWeight="bold">
                                 Social Media
                             </Typography>
                             <SocialMedia direction="row" />
