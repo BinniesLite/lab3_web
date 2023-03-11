@@ -1,16 +1,18 @@
 // create a interface for the work arrays of object
 export interface Work {
-    id: number,
-    title: string;
-    description: string;
-    date: string;
-    image: string;
+    name?: string;
+    id?: number,
+    title?: string;
+    description?: string;
+    date?: string;
+    image?: string;
 }
 
 import project1 from '../assets/project_1.jpg';
 import project2 from '../assets/project2.jpg';
 import project3 from '../assets/project3.jpg';
 import project4 from '../assets/project4.jpg'; 
+
 
 export const works: Work[] = [
     {

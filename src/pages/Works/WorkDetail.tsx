@@ -13,19 +13,34 @@ import Section from '../../components/Section';
 import HorizontalScrollbar from '../../components/HorizontalScroll';
 
 
+interface ProjectDetail {
+    id: number;
+    name: string;
+    description?: string;
+    members: {
+        id: number;
+        name: string;
+    }[];
+}
+
+interface Member {
+    id?: number;
+    name?: string;
+}
+
 const WorkDetail = () => {
-    const [projectDetail, setProjectDetail] = React.useState({});
+    const [projectDetail, setProjectDetail] = React.useState<ProjectDetail | any>({});
     const [images, setImages] = React.useState([]);
     const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
-        getProjectsDetail(parseInt(id, 10)).then((res) => {
+        getProjectsDetail(parseInt(id as string, 10)).then((res) => {
             setProjectDetail(res.data);
         })
     }, [])
 
     useEffect(() => {
-        getImagesForProject(parseInt(id, 10)).then((res) => {
+        getImagesForProject(parseInt(id as string, 10)).then((res) => {
             setImages(res.data)
         })
     }, [])
@@ -46,7 +61,7 @@ const WorkDetail = () => {
             <Section>
                 <h1>{projectDetail.name}</h1>
                 <Typography  gutterBottom variant='body1' color="text.primary">
-                    Author: {members && members.map((member, key) => (
+                    Author: {members && members.map((member: Member, key: any) => (
                         <span key={key}>{member.name} {",  "}</span>
                     ))}
                 </Typography>

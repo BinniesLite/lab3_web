@@ -30,7 +30,7 @@ const initialState = {
   error: false,
 }
 
-function reducer(state, action) {
+function reducer(state: any, action: any) {
   switch (action.type) {
     case 'updateName':
       
