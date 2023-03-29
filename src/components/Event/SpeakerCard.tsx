@@ -1,32 +1,31 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    borderLeft: `5px solid black`,
-    padding: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-  },
-  content: {
-    marginLeft: theme.spacing(2),
-  },
-}));
+interface SpeakerStackProps {
+  speaker: string;
+  speakerTitle: string;
+}
 
-function SpeakerStack({ speaker, speakerTitle } :{ speaker: string, speakerTitle: string }) {
-  const classes = useStyles();
-  
+function SpeakerStack({ speaker, speakerTitle }: SpeakerStackProps) {
+  const rootStyle = {
+    borderLeft: `5px solid black`,
+    padding: '16px',
+    marginBottom: '16px',
+  };
+  const contentStyle = {
+    marginLeft: '16px',
+  };
 
   return (
-    <Stack direction="column" my={3} alignItems="center" className={classes.root}>
+    <Stack direction="column" my={3} alignItems="center" sx={rootStyle}>
       <Typography variant="h5">{speaker}</Typography>
       {/* Hide this box when the screen size is small */}
-      <Box sx={{display: {md: 'block',}}} >
-          <Typography variant="subtitle1" color='text.secondary' className={classes.content}>
-            {speakerTitle}
-          </Typography>
+      <Box sx={{ display: { md: 'block' } }}>
+        <Typography variant="subtitle1" color="text.secondary" sx={contentStyle}>
+          {speakerTitle}
+        </Typography>
       </Box>
     </Stack>
   );
