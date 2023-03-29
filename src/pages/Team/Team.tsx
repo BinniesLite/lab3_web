@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Wrapper from '../../layout/Wrapper';
+
 import Section from '../../components/Section';
 
 import TeamCard from '../../components/Team/TeamCard';
@@ -9,17 +9,26 @@ import Divider from '@mui/material/Divider';
 
 import { getAllMember } from '../../api/http-request';
 
-import Box from '@mui/material/Box'
+
+
+// import react query
+import { useQuery } from '@tanstack/react-query';
 
 const Team = () => {
   const [members, setMembers] = useState([]);
-  const [membersProject, setMembersProject] = useState([]);
-
-  useEffect(() => {
+  
+  const {data, isLoading, error} = useQuery(['members'], () => {
     getAllMember().then((res) => {
       setMembers(res.data);
     })
-  }, [])
+  }, {
+    cacheTime: Infinity,
+  });
+
+  if (isLoading) return <>
+  
+  </>;
+ 
 
 
   return (
@@ -34,10 +43,11 @@ const Team = () => {
           </Typography>
         </Stack>
         <Divider sx={{fontWeight: 'bold', borderColor: 'black',  my: 6  , borderBottomWidth: '2px'}}/>
-          <Stack justifyContent="start" alignItems="start" flex="wrap" columnGap={8} flexDirection={{ md: 'row', xs: 'column' }}>
-            {members.map((member, key) => (
+          <Stack justifyContent="start" alignItems="start" flex="wrap" rowGap={4} columnGap={8} flexDirection={{ md: 'row', xs: 'column' }}>
+            {!isLoading && 
+              members.map((member: any, key: any) => (
               <TeamCard member={member} key={key} />
-            ))}
+              )) }
           </Stack>
       </Section>
 

@@ -4,7 +4,11 @@ import Projects from '../components/Projects/Projects'
 import About from './About/About'
 import Contact from './Contact/Contact'
 
+import { getAllProjects } from '../api/http-request'
+
 const Home = () => {
+  
+
   return (<>
       <Header/>
       <Projects />

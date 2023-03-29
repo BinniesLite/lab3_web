@@ -2,16 +2,12 @@ import React from 'react'
 import { Stack, Typography, Divider, Grid } from '@mui/material'
 
 import About from '../About/About'
-
 import { Events as EventType , events } from '../../constants/events';
-import EventCard from '../../components/EventCard';
-
+import EventCard from '../../components/Event/EventCard';
 import { ScrollToTop } from '../../utils/scroll-top';
-
 import Section from '../../components/Section';
 
 const Events = () => {
-    
     return (
     
         <Stack sx={{ width: '100%', bgColor: '#fff1d6' }}>

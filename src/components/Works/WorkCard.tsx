@@ -41,7 +41,7 @@ const WorkCard = ({ img, date, description, title, id }: CardProps) => {
     return (
         <Link to={`/work/${id}`}>
           <Card classes={{root: customCardStyle.root}} sx={{  cursor: 'pointer' }}>
-              <CardMedia sx={{ width: { xs: '300px' }, height: { xs: '300px' } }} component="img" alt={'this is new'} image={img} />
+              <CardMedia sx={{ width: { xs: '250px', md: "400px" }, height: { xs: '250px' } }} component="img" alt={'this is new'} image={img} />
               <CardContent classes={{root: customCardContent.root}}>
                   <Typography color="text.primary" fontWeight="bold" component="div">
                       {title}
