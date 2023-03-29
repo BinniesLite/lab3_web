@@ -20,6 +20,7 @@ const OrganizerCard = ({ avatarSrc, name, title }: OrganizerCardProps) => {
       <Stack>
         <Typography variant="h5">{name}</Typography>
         <Typography variant="body1" color="text.secondary">{title}</Typography>
+        <Typography variant="subtitle1" sx={{color: 'blue'}}><a target="_blank" href="https://chriswjh.github.io/WIRL/">Website:  Dr. Jenq-Haur Wang</a></Typography>
       </Stack>
     </Stack>
   );

@@ -1,4 +1,6 @@
 import mahdi from '../assets/mahdi.png';
+import prof from '../assets/other_prof.png';
+
 // create an interface for the events array of objects
 export interface Events {
     year?: string,
@@ -75,15 +77,11 @@ export const events: Events[] = [
                 eventTitle: 'The Second Sequence Modeling Workshop– Natural Language and Video Processing',
                 eventDescription: 'Announcement of the world leading technology - March 13, 2023 & March 15, 2023',
                 eventOrganizer: [
-                    {
-                      organizerName: "Dr. Mehdi Norouzi",
-                      organizerTitle: "Associate Professor at UC",
-                      organizerImg: mahdi                    
-                    },
+            
                     {
                       organizerName: "Dr. Jenq-Haur Wang",
                       organizerTitle: "Professor at NTUT",
-                      organizerImg: ""
+                      organizerImg: prof
                     }
                 ],
                 eventLocation: 'National Taipei University of Technology(NTUT), Taipei, Taiwan',

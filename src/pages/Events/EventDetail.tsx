@@ -68,11 +68,12 @@ const EventDetail = () => {
 
                 <Divider sx={{ borderBottomWidth: '3px', fontWeight: 'bold', my: 5 }} />
                 <Stack flexDirection="column" alignContent="center" width="100%" my={8}>
-                    <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4"> Organizer </Typography>
+                    <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4"> Workshop Chair </Typography>
                     <Stack width="100%" alignContent="center" justifyContent="center">
                         {eventDetail.eventOrganizer?.map((organizer: any, index: number) => (
                             <OrganizerCard key={index} avatarSrc={organizer.organizerImg} name={organizer.organizerName} title={organizer.organizerTitle} />
                         ))}
+                        
                     </Stack>
 
                 </Stack>
@@ -85,14 +86,13 @@ const EventDetail = () => {
                             <SpeakerStack key={index} speaker={speaker.name} speakerTitle={speaker.speakerTitle} />
                         ))}
                     </Stack>
-
                 </Stack>
 
 
                 <Divider sx={{ borderBottomWidth: '3px', fontWeight: 'bold', mt: 20 }} />
                 <Stack mt={20}>
                     <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4">Schedule</Typography>
-                    <Stack>
+                    <Stack> 
                         <Typography color="text.secondary" variant="h6">
                             Closed Event
                         </Typography>
