@@ -40,7 +40,7 @@ const Navbar = () => {
         }} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4, }}>
                 <Link to="/">
-                    <Typography fontWeight="800"  sx={{fontWeigth: '500'}} variant="h6">MahdiLab</Typography>
+                    <Typography fontWeight="800"  sx={{fontWeigth: '500'}} variant="h6">Lab37</Typography>
                 </Link>
             </Box>
             <Stack sx={{fontWeight: 500,

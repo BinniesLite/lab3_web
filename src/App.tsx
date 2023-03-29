@@ -7,31 +7,38 @@ import Team from './pages/Team/Team';
 import Works from './pages/Works/Works';
 import WorkDetail from './pages/Works/WorkDetail';
 import Events from './pages/Events/Events';
+import EventDetail from './pages/Events/EventDetail';
+
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 
 import './App.scss'
 
-function App() {
+function App() {  
+  const client = new QueryClient();
 
   return (
   <div className=''>
-      <Router>
-      <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/team" element={<Team/>}/>
-          <Route path="/work" element={<Works/>}/>
-          <Route path="/work/:id" element={<WorkDetail/>}/>
-          <Route path="/events" element={<Events/>}/>
-        </Routes>
-      </Router>
-    
-      <Suspense fallback="">
-        <Footer />
-      </Suspense>
+      <QueryClientProvider client={client}>
+        <Router>
+        <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/team" element={<Team/>}/>
+      
+            <Route path="/work" element={<Works/>}/>
+            <Route path="/work/:id" element={<WorkDetail/>}/>
+            <Route path="/events" element={<Events/>}/>
+            <Route path="/events/:id" element={<EventDetail/>}/>
+          </Routes>
+        </Router>
+        <Suspense fallback="">
+          <Footer />
+        </Suspense>
+      </QueryClientProvider>
     </div>
   )
 }
