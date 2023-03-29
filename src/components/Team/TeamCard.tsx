@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { CardActions } from '@material-ui/core';
+import CardActions  from '@mui/material/CardActions';
 
 import { getMemberProjects } from '../../api/http-request';
 import arrowUp from '../../assets/icons/arrow-up.png';
