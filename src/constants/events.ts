@@ -1,4 +1,3 @@
-import mahdi from '../assets/mahdi.png';
 import prof from '../assets/other_prof.png';
 
 // create an interface for the events array of objects

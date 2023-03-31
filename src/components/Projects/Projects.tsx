@@ -39,4 +39,4 @@ export const Projects = () => {
   )
 }
 
-export default Wrapper(Projects, 'project');
+export default Wrapper(Projects, 'projects');
