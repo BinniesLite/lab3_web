@@ -22,26 +22,26 @@ import { useQuery } from '@tanstack/react-query';
 
 const Works = () => {
   const [projects, setProjects] = React.useState<Projects[]>([]);
-  const {data, isLoading, error} = useQuery(['projects-main'], () => {
+  const { data, isLoading, error } = useQuery(['projects-main'], () => {
     return getAllProjects().then((res) => {
       return res.data
     })
-  }, 
-  {
-    cacheTime: Infinity
-  }
+  },
+    {
+      cacheTime: Infinity
+    }
   )
-  
+
 
 
   if (error) {
     console.log(error);
   }
-  
 
 
 
-  
+
+
 
   return (
     <Stack sx={{ width: '100%', backgroundColor: '' }}>
@@ -56,18 +56,24 @@ const Works = () => {
           </Typography>
 
         </Stack>
-        <Box 
-          sx={{ my: 4, display: {xs: 'none', md: 'block'} }}>
-            <Image style={{ maxWidth: '100%', height: 'auto' }} src={workHeader} alt="" />
-          </Box>
+        <Box
+          sx={{ my: 4, display: { xs: 'none', md: 'block' } }}>
+          <Image style={{ maxWidth: '100%', height: 'auto' }} src={workHeader} alt="" />
+        </Box>
+        
         <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black', my: 10 }} />
+          <Typography variant="h2">"The era of artificial intelligence is upon us, and we're either going to be part of the problem or part of the solution." - Kai-Fu Lee
+          </Typography>
+        
+        <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black', my: 10 }} />
+
         <Stack columnGap={5} flexWrap="wrap" flexDirection="row">
           {!isLoading &&
             <>
-            {data.map((project: any, key: any) => (
-              <WorkCard id={project.id} key={key} img={project.image} date={project.date} description={project.description} title={project.name} />
-            ))}
-          </>
+              {data.map((project: any, key: any) => (
+                <WorkCard id={project.id} key={key} img={project.image} date={project.date} description={project.description} title={project.name} />
+              ))}
+            </>
           }
         </Stack>
 

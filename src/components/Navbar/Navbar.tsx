@@ -29,14 +29,27 @@ const Navbar = () => {
         }
     }    
 
+    const backgroundColor = () => {
+        if (location.pathname === '/') {
+            return 'transparent'
+        } else if (location.pathname === '/contact') {
+            return 'transparent'
+        } else if (location.pathname === '/team') {
+            return '#fde6ff'
+        } else if (location.pathname === '/work') {
+            return 'transparent'
+        }
+    }
+
+    console.log(backgroundColor);
+
     return (
         <Stack sx={{width: '100%', 
-        my: 3, 
-        transition: '0.3s all ease-in', 
-        position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`
-        ,
-        color: `${currentPath()}`
-
+        py: 4, 
+        transition: '0.4s all ease-in-out', 
+        position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`,
+        color: `${currentPath()}`,
+        backgroundColor: `${backgroundColor()}`,
         }} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4, }}>
                 <Link to="/">
