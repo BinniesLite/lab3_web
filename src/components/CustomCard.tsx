@@ -22,7 +22,7 @@ interface CardProps {
 
 const CustomCard = ({img, date, description, title, id}: CardProps) => {
   return (
-    <Card variant="outlined" sx={{p: 3}}>
+    <Card variant="outlined" sx={{p: 3, mx: 4 }}>
       <MemoizedCardMedia sx={{minWidth: {xs: '200px', md: '400px'}, height: {xs: '300px', md: '500px'} }}  image={img} />
         <CardContent>
           <Typography variant="subtitle1" color="text.secondary" component="div">

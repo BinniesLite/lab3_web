@@ -4,7 +4,7 @@ import { Stack, Box, Typography } from '@mui/material';
 import './Navbar.scss'; 
 
 import { Link, useLocation } from 'react-router-dom';
-
+import { smoothScroll } from '../../utils/scroll';
 
 
 const links = ['About']
@@ -29,14 +29,25 @@ const Navbar = () => {
         }
     }    
 
+    const backgroundColor = () => {
+        if (location.pathname === '/') {
+            return 'transparent'
+        } else if (location.pathname === '/contact') {
+            return 'transparent'
+        } else if (location.pathname === '/team') {
+            return '#fde6ff'
+        } else if (location.pathname === '/work') {
+            return 'transparent'
+        }
+    }
+
     return (
         <Stack sx={{width: '100%', 
-        my: 3, 
-        transition: '0.3s all ease-in', 
-        position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`
-        ,
-        color: `${currentPath()}`
-
+        py: 4, 
+        transition: '0.4s all ease-in-out', 
+        position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`,
+        color: `${currentPath()}`,
+        backgroundColor: `${backgroundColor()}`,
         }} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ml: 4, }}>
                 <Link to="/">
@@ -58,6 +69,7 @@ const Navbar = () => {
                     <Link to="/events">Events</Link>
                     <Link to="/work"><a href="">Research</a></Link>
                     <Link to="/team"><a  href="">Our Team</a></Link>
+                    <a onClick={() => smoothScroll('contact')} href="#">Contact</a>
                     </>
 
                     )
