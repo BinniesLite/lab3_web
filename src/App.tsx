@@ -34,9 +34,9 @@ function App() {
                 <Contact/>}/>
               <Route path="/team" element={<Suspense fallback={<></>}>
                   
-                  <Loading>
+                  <>
                   <Team/>
-                  </Loading>
+                  </>
                 
                 </Suspense>}
               />

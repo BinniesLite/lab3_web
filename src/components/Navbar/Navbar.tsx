@@ -4,7 +4,7 @@ import { Stack, Box, Typography } from '@mui/material';
 import './Navbar.scss'; 
 
 import { Link, useLocation } from 'react-router-dom';
-
+import { smoothScroll } from '../../utils/scroll';
 
 
 const links = ['About']
@@ -41,8 +41,6 @@ const Navbar = () => {
         }
     }
 
-    console.log(backgroundColor);
-
     return (
         <Stack sx={{width: '100%', 
         py: 4, 
@@ -71,6 +69,7 @@ const Navbar = () => {
                     <Link to="/events">Events</Link>
                     <Link to="/work"><a href="">Research</a></Link>
                     <Link to="/team"><a  href="">Our Team</a></Link>
+                    <a onClick={() => smoothScroll('contact')} href="#">Contact</a>
                     </>
 
                     )
