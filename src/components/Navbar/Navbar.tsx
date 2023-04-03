@@ -2,12 +2,22 @@ import React, {useState} from 'react';
 import { Stack, Box, Typography } from '@mui/material';
 
 import './Navbar.scss'; 
-
 import { Link, useLocation } from 'react-router-dom';
-import { smoothScroll } from '../../utils/scroll';
+
+const smoothScroll = (id: string): void => {
+    const element = document.querySelector(id);
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 1500);
+    }
+  };
+  
 
 
-const links = ['About']
+
+
+const links = ['event', 'project', 'contact']
 
 const Navbar = () => {
     const [active, setActive] = useState(links[0]);
@@ -59,7 +69,12 @@ const Navbar = () => {
                 mr: 13, 
                 flexDirection: {xs: 'column', md: 'row'}, 
                 rowGap: {xs: 1.5}, 
-                justifyContent: {xs: 'flex-end', md: ''} } } 
+                justifyContent: {xs: 'flex-end', md: ''},
+                cursor: 'pointer', 
+            
+            } 
+            }
+
                 columnGap="4rem">
                 
                 {location.pathname === '/contact'  ? <Link to="/">Home</Link> : 
@@ -69,7 +84,7 @@ const Navbar = () => {
                     <Link to="/events">Events</Link>
                     <Link to="/work"><a href="">Research</a></Link>
                     <Link to="/team"><a  href="">Our Team</a></Link>
-                    <a onClick={() => smoothScroll('contact')} href="#">Contact</a>
+                    <a  onClick={() => smoothScroll('#contact')} >Contact</a>
                     </>
 
                     )

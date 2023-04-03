@@ -1,17 +1,17 @@
 import React from 'react'
-
+// Styling
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-
+// Styling
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 
-import SocialMedia from './SocialMedia';
+// import SocialMedia from './SocialMedia';
 
 import { Link } from 'react-router-dom';
 
@@ -51,10 +51,10 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                             {description}
                         </Typography>
                         <Stack color="black" mt={3}>
-                            <Typography color="black" component="div" fontWeight="bold">
+                            {/* <Typography color="black" component="div" fontWeight="bold">
                                 Social Media
-                            </Typography>
-                            <SocialMedia direction="row" />
+                            </Typography> */}
+                            {/* <SocialMedia direction="row" /> */}
                         </Stack>
                         </Stack>
                         

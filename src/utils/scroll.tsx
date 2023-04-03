@@ -1,4 +1,4 @@
-function smoothScroll(target: string) {
+export function smoothScroll(target: string) {
     const element = document.getElementById(target);
     
     if (element) {

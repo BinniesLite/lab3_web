@@ -3,17 +3,18 @@ import Header from '../pages/Header/Header'
 import Projects from '../components/Projects/Projects'
 import About from './About/About'
 import Contact from './Contact/Contact'
-
-import { getAllProjects } from '../api/http-request'
+import Box from '@mui/material/Box';
 
 const Home = () => {
   
 
   return (<>
       <Header/>
-      <Projects />
-      <About/>
-      <Contact/>
+      <Box sx={{ml: {xs: 0, md: 10}}}>
+        <About/>
+        <Projects />
+        <Contact/>
+      </Box>
     </>
   )
 }
