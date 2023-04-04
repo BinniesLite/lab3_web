@@ -7,7 +7,6 @@ import EventCard from '../../components/Event/EventCard';
 import Box from '@mui/material/Box';
 
 import { Events, events } from '../../constants/events';
-
 import { Link } from 'react-router-dom';
 
 const About = () => {
