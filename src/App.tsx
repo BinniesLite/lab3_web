@@ -33,7 +33,9 @@ function App() {
               <Route path="/" element={<Loading><Home /></Loading>} />
            
               <Route path="/team" element={<Suspense fallback={<></>}>
+                <Loading>
                 <Team />
+                </Loading>
               </Suspense>}
               />
               <Route path="/work" element={<Suspense fallback={<></>}>
