@@ -37,7 +37,7 @@ const Footer = () => {
                 <h4></h4>
             </Grid>
             <Grid item md={4} xs={12}>
-                <SocialMedia />
+               
             </Grid>
 
         </Grid>

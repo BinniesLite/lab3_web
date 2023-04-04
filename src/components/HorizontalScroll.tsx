@@ -9,8 +9,6 @@ import { Work } from '../constants/work';
 // import RightArrowIcon from '../assets/icons/right-arrow.svg';
 // import LeftArrowIcon from '../assets/icons/left-arrow.svg';
 
-import { Link } from 'react-router-dom';
-
 import useDrag from '../hooks/useDrag';
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;

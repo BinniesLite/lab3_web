@@ -7,7 +7,6 @@ import EventCard from '../../components/Event/EventCard';
 import Box from '@mui/material/Box';
 
 import { Events, events } from '../../constants/events';
-
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -32,4 +31,4 @@ const About = () => {
   )
 }
 
-export default Wrapper(About, 'about');
+export default Wrapper(About, 'event');
