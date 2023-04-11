@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import Section from '../../components/Section';
+import Section from '../../layout/Section';
 
 import TeamCard from '../../components/Team/TeamCard';
 import Typography from '@mui/material/Typography'
@@ -32,7 +32,7 @@ const Team = () => {
 
 
   return (
-    <Stack sx={{ backgroundColor: '#fde6ff', width: '100%', color: '#2e712b'}}>
+    <Stack sx={{ backgroundColor: '', width: '100%', color: ''}}>
       <Section>
         <Stack flexDirection={{ md: 'row', xs: 'column' }} rowGap={3} justifyContent="space-between">
           <Typography variant="h1" fontWeight="500">
@@ -43,7 +43,9 @@ const Team = () => {
           </Typography>
         </Stack>
         <Divider sx={{fontWeight: 'bold', borderColor: 'black',  my: 6  , borderBottomWidth: '2px'}}/>
-          <Stack justifyContent="start" alignItems="start" flex="wrap" rowGap={4} columnGap={8} flexDirection={{ md: 'row', xs: 'column' }}>
+          <Stack 
+            justifyContent="start" 
+            alignItems="start" flexWrap="wrap" rowGap={4} columnGap={8} flexDirection={{ md: 'row', xs: 'column' }}>
             {!isLoading && 
               members.map((member: any, key: any) => (
               <TeamCard member={member} key={key} />

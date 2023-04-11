@@ -5,7 +5,7 @@ import About from '../About/About'
 import { Events as EventType , events } from '../../constants/events';
 import EventCard from '../../components/Event/EventCard';
 import { ScrollToTop } from '../../utils/scroll-top';
-import Section from '../../components/Section';
+import Section from '../../layout/Section';
 
 const Events = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from '../../components/Section'
+import Section from '../../layout/Section'
 import Wrapper from '../../layout/Wrapper'
 
 import Grid from '@mui/material/Grid';

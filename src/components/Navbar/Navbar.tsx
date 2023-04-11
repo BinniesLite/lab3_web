@@ -59,7 +59,7 @@ const Navbar = () => {
             transition: '0.4s all ease-in-out',
             position: `${isContact || location.pathname === "/team" ? '' : 'absolute'}`,
             color: `${currentPath()}`,
-            backgroundColor: `${backgroundColor()}`,
+            backgroundColor: '',
         }} flexDirection="row" justifyContent="space-between" >
             <Box sx={{ ml: 4, }}>
                 <Link to="/">
