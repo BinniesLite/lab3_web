@@ -3,7 +3,7 @@ import Wrapper from '../../layout/Wrapper';
 
 import { Stack, Box } from '@mui/material';
 import HorizontalScrollbar from '../HorizontalScroll';
-import Section from '../Section';
+import Section from '../../layout/Section';
 import { Link } from 'react-router-dom';
 import "./Projects.scss";
 

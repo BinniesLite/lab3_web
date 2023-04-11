@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Divider } from '@mui/material';
-import Section from '../../components/Section';
+import Section from '../../layout/Section';
 
 import HorizontalScrollbar from '../../components/HorizontalScroll';
 

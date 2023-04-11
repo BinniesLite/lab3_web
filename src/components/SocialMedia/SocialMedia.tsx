@@ -16,7 +16,7 @@ const SocialMedia = ({ direction, color }: SocialMediaProps) => {
     const handleScroll = () => {
       const scrollPosition = window.pageYOffset;
       const secondSection = document.getElementById('event');
-      if (secondSection && scrollPosition >= secondSection.offsetTop) {
+      if (secondSection && scrollPosition >= secondSection.offsetTop - 300) {
         setShowComponent(true);
       } else {
         setShowComponent(false);
@@ -34,8 +34,8 @@ const SocialMedia = ({ direction, color }: SocialMediaProps) => {
     <Stack
       sx={{
         position: 'fixed',
-        top: '50%',
-
+        top: '22%',
+        zIndex: 9998,
         visibility: showComponent ? 'visible' : 'hidden',
         display: { xs: 'none', md: 'flex' },
       }}

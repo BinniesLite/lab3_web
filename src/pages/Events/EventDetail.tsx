@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Divider } from '@mui/material';
-import Section from '../../components/Section';
+import Section from '../../layout/Section';
 import SpeakerStack from '../../components/Event/SpeakerCard';
 import OrganizerCard from '../../components/Event/OrganizerCard';
 import { events, Events } from '../../constants/events';

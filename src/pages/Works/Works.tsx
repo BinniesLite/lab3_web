@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack, Divider, Box } from '@mui/material';
-import Section from '../../components/Section';
+import Section from '../../layout/Section';
 import WorkCard from '../../components/Works/WorkCard';
 import workHeader from '../../assets/work.jpg';
 import { getAllProjects } from '../../api/http-request';
@@ -48,11 +48,11 @@ const Works = () => {
             <Typography variant="h2" fontWeight="500">
               Projects
             </Typography>
-            <Typography gutterBottom variant="h5"  color="text.primary">
+            {/* <Typography gutterBottom variant="h5"  color="text.primary">
               The future is here, we're always strive to improve ourself and the world. <br /> We strive to make the best result
-            </Typography>
+            </Typography> */}
           </Stack>
-          <Box
+          {/* <Box
             sx={{ my: 4, display: { xs: 'none', md: 'block' } }}
           >
             <img
@@ -61,7 +61,7 @@ const Works = () => {
               alt=""
               onLoad={handleImageLoad}
             />
-          </Box>
+          </Box> */}
           <Divider
             sx={{
               borderBottomWidth: '2px',
@@ -71,10 +71,10 @@ const Works = () => {
               my: 10,
             }}
           />
-          <Typography variant="h2">
+          {/* <Typography variant="h2">
             "The era of artificial intelligence is upon us, and we're either going to be part of the problem or part of the solution." - Kai-Fu Lee
-          </Typography>
-          <Divider
+          </Typography> */}
+          {/* <Divider
             sx={{
               borderBottomWidth: '2px',
               fontWeight: 'bold',
@@ -82,7 +82,7 @@ const Works = () => {
               borderColor: 'black',
               my: 10,
             }}
-          />
+          /> */}
           <Stack columnGap={5} flexWrap="wrap" flexDirection="row">
             {!isLoading && (
               <>

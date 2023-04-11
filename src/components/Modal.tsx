@@ -4,6 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
+import { Backdrop } from '@mui/material';
 // Styling
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack';
@@ -25,45 +26,44 @@ interface ModalProps {
 }
 
 
-const Modal = ({ active, setActive, description, image, projects }: ModalProps) => {    
-    
+const Modal = ({ active, setActive, description, image, projects }: ModalProps) => {
+    console.log(active);
     return (
         <Dialog
             open={active}
-            onClose={() => setActive(prev => !prev)}
+            onClose={() => setActive(false)}
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
-            sx={{'& .MuiDialog-paper': {width: '80%', height: '70%', margin: 0, maxWidth: 'none'}}}
+            sx={{ '& .MuiDialog-paper': { width: '80%', height: '70%', margin: 0, maxWidth: 'none' } }}
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+                onClick: () => setActive(prev => !prev),
+
+            }}
         >
             <DialogContent >
                 <DialogContentText id="alert-dialog-description">
-                    <Stack columnGap={5}  flexDirection="row">
-                        <Box width="300px" height="400px" sx={{display: {xs: 'none', md: 'block'}}} >
-                            <img style={{width: 'inherit', height: 'inherit'}} src={image} alt="" />
+                    <Stack columnGap={5} flexDirection="row">
+                        <Box width="300px" height="400px" sx={{ display: { xs: 'none', md: 'block' } }} >
+                            <img style={{ width: 'inherit', height: 'inherit' }} src={image} alt="" />
                         </Box>
 
-                        <Divider orientation="vertical" flexItem />   
-                        <Stack>
-                        <Typography color="black" component="div" variant="h4" fontWeight="bold">
-                            About Me  
-                        </Typography> 
-                        <Typography component="div" variant='body1'  >
-                            {description}
-                        </Typography>
-                        <Stack color="black" mt={3}>
-                            {/* <Typography color="black" component="div" fontWeight="bold">
+                        <Divider orientation="vertical" flexItem />
+                        <Stack flexDirection="column">
+                            <Typography color="black" component="div" variant="h4" fontWeight="bold">
+                                About Me
+                            </Typography>
+                            <Typography component="div" variant='body1'  >
+                                {description}
+                            </Typography>
+                            <Stack color="black" mt={3}>
+                                {/* <Typography color="black" component="div" fontWeight="bold">
                                 Social Media
                             </Typography> */}
-                            {/* <SocialMedia direction="row" /> */}
-                        </Stack>
-                        </Stack>
-                        
-                       
-                    </Stack>
-                </DialogContentText>
-            </DialogContent>
-            <DialogActions sx={{p: 3}}>
-            {projects && projects.map((project: any, key: number) => (
+                                {/* <SocialMedia direction="row" /> */}
+                            </Stack>
+                            <Stack flexWrap='wrap' flexDirection="row" rowGap={3} columnGap={3}>
+                            {projects && projects.map((project: any, key: number) => (
                
                <Link key={key} to={`/work/${project.id}`}>
                    <Chip label={project.name} key={key} clickable />
@@ -71,6 +71,16 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
             ))
             
             }
+                            </Stack>
+                        </Stack>
+
+
+
+                    </Stack>
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions sx={{ p: 3 }}>
+
             </DialogActions>
 
         </Dialog>
