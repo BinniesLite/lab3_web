@@ -13,6 +13,7 @@ import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 
 // import SocialMedia from './SocialMedia';
+import SocialMediaVertical from './SocialMedia/SocialMediaVertical';
 
 import { Link } from 'react-router-dom';
 
@@ -27,11 +28,11 @@ interface ModalProps {
 
 
 const Modal = ({ active, setActive, description, image, projects }: ModalProps) => {
-    console.log(active);
+
     return (
         <Dialog
             open={active}
-            onClose={() => setActive(false)}
+
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
             sx={{ '& .MuiDialog-paper': { width: '80%', height: '70%', margin: 0, maxWidth: 'none' } }}
@@ -57,32 +58,24 @@ const Modal = ({ active, setActive, description, image, projects }: ModalProps) 
                                 {description}
                             </Typography>
                             <Stack color="black" mt={3}>
-                                {/* <Typography color="black" component="div" fontWeight="bold">
-                                Social Media
-                            </Typography> */}
-                                {/* <SocialMedia direction="row" /> */}
+                                <Typography color="black" component="div" fontWeight="bold">
+                                    Social Media
+                                </Typography>
+                                <SocialMediaVertical />
                             </Stack>
                             <Stack flexWrap='wrap' flexDirection="row" rowGap={3} columnGap={3}>
-                            {projects && projects.map((project: any, key: number) => (
-               
-               <Link key={key} to={`/work/${project.id}`}>
-                   <Chip label={project.name} key={key} clickable />
-               </Link>   
-            ))
-            
-            }
+                                {projects && projects.map((project: any, key: number) => (
+                                    <Link key={key} to={`/work/${project.id}`}>
+                                        <Chip label={project.name} key={key} clickable />
+                                    </Link>
+                                ))}
                             </Stack>
                         </Stack>
-
-
-
                     </Stack>
                 </DialogContentText>
             </DialogContent>
             <DialogActions sx={{ p: 3 }}>
-
             </DialogActions>
-
         </Dialog>
     )
 }
