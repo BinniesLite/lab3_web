@@ -31,4 +31,4 @@ const Projects = ({data, isLoading}: ProjectsProps) => {
   )
 }
 
-export default Wrapper(Projects, 'project');
+export default Wrapper(Projects, 'research');

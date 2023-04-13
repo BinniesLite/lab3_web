@@ -38,9 +38,9 @@ const Team = () => {
           <Typography variant="h1" fontWeight="500">
             Team
           </Typography>
-          <Typography gutterBottom variant='h5' color="inherit">
+          {/* <Typography gutterBottom variant='h5' color="inherit">
           Get to know our team of AI Scientist that are changing the world. <br></br> We’re always looking for curious minds to join our team
-          </Typography>
+          </Typography> */}
         </Stack>
         <Divider sx={{fontWeight: 'bold', borderColor: 'black',  my: 6  , borderBottomWidth: '2px'}}/>
           <Stack 

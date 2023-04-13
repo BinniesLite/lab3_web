@@ -1,10 +1,18 @@
+import { SVGAttributes, FunctionComponent } from 'react';
+
 import facebook from '../assets/icons/facebook.svg';
 import twitter from '../assets/icons/twitter.svg';
 import linkedin from '../assets/icons/linkedin.svg';
 import github from  '../assets/icons/github.svg';
 import instagram from '../assets/icons/instagram.svg';
 
-export const socials = [
+interface Social {
+  id: number;
+  icon: FunctionComponent<SVGAttributes<SVGElement>> | string;
+  link: string;
+}
+
+export const socials: Social[] = [
   {
     id: 1,
     icon: facebook,

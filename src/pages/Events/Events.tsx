@@ -17,9 +17,7 @@ const Events = () => {
                     <Typography variant="h1" fontWeight="500">
                         Events
                     </Typography>
-                    <Typography gutterBottom variant='h5' color="text.primary">
-                        Explore how our team explore technology and work for a better goal
-                    </Typography>
+                  
                 </Stack>
                 <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black' }} />
 

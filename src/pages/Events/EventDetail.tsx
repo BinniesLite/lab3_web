@@ -94,13 +94,13 @@ const EventDetail = () => {
                     <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4">Schedule</Typography>
                     <Stack> 
                         <Typography color="text.secondary" variant="h6">
-                            Closed Event
+                            {eventTablePrivate && "Closed Event"}
                         </Typography>
-                        <TableCustom eventTable={eventTablePrivate} />
+                        {eventTablePrivate && <TableCustom eventTable={eventTablePrivate} />}
                     </Stack>
                     <Stack>
                         <Typography color="text.secondary" variant="h6">
-                            Open Event
+                            {eventTableOpen && "Open Event"}
                         </Typography>
                         <TableCustom eventTable={eventTableOpen} />
                     </Stack>

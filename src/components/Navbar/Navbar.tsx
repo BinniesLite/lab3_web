@@ -18,7 +18,7 @@ const smoothScroll = (id: string): void => {
 
 
 
-const links = ['event', 'project', 'contact']
+const links = ['research', 'event', 'contact']
 
 const Navbar = () => {
     const [active, setActive] = useState(links[0]);
