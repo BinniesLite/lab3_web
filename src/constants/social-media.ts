@@ -8,7 +8,7 @@ import instagram from '../assets/icons/instagram.svg';
 
 interface Social {
   id: number;
-  icon: FunctionComponent<SVGAttributes<SVGElement>> | string;
+  icon: any;
   link: string;
 }
 
