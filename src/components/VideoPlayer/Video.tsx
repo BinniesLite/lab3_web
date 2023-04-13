@@ -15,7 +15,7 @@ const VideoPlayer = ({ embedId }: VideoPlayerProps) => (
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       
-      loop // makes the video play in an infinite loop
+      
     />
   </div>
 );
