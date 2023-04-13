@@ -1,13 +1,9 @@
 import React from 'react'
-
 import SocialMedia from '../SocialMedia';
-
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
 import Grid from '@mui/material/Grid';
-
 
 
 const Footer = () => {
@@ -15,7 +11,7 @@ const Footer = () => {
         <Grid 
             container 
             rowSpacing={2}
-            sx={{ background: 'var(--black-color)', color: 'var(--white-color)', p: 3, py: 4, }}>
+            sx={{ background: 'var(--black-color)', color: 'var(--white-color)', p: 3, py: 4 }}>
             <Grid xs={12}>
                 <h3>Lab37</h3>
             </Grid>
@@ -28,8 +24,8 @@ const Footer = () => {
                         <a className='link'></a>
                     </Stack>
                 </Stack>
-                <div>
-                    <p>© 2021 MahdiLab</p>
+                <div>   
+                    <p>© 2021 Lab37</p>
                 </div>
                 </Stack>
             </Grid>
@@ -37,7 +33,7 @@ const Footer = () => {
                 <h4></h4>
             </Grid>
             <Grid item md={4} xs={12}>
-                <SocialMedia />
+               
             </Grid>
 
         </Grid>

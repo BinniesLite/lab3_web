@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from '../../components/Section'
+import Section from '../../layout/Section'
 import Wrapper from '../../layout/Wrapper'
 
 import Grid from '@mui/material/Grid';
@@ -7,7 +7,6 @@ import EventCard from '../../components/Event/EventCard';
 import Box from '@mui/material/Box';
 
 import { Events, events } from '../../constants/events';
-
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -32,4 +31,4 @@ const About = () => {
   )
 }
 
-export default Wrapper(About, 'about');
+export default Wrapper(About, 'event');

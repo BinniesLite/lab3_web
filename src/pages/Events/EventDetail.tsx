@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Divider } from '@mui/material';
-import Section from '../../components/Section';
+import Section from '../../layout/Section';
 import SpeakerStack from '../../components/Event/SpeakerCard';
 import OrganizerCard from '../../components/Event/OrganizerCard';
 import { events, Events } from '../../constants/events';
@@ -94,13 +94,13 @@ const EventDetail = () => {
                     <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4">Schedule</Typography>
                     <Stack> 
                         <Typography color="text.secondary" variant="h6">
-                            Closed Event
+                            {eventTablePrivate && "Closed Event"}
                         </Typography>
-                        <TableCustom eventTable={eventTablePrivate} />
+                        {eventTablePrivate && <TableCustom eventTable={eventTablePrivate} />}
                     </Stack>
                     <Stack>
                         <Typography color="text.secondary" variant="h6">
-                            Open Event
+                            {eventTableOpen && "Open Event"}
                         </Typography>
                         <TableCustom eventTable={eventTableOpen} />
                     </Stack>

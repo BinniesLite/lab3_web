@@ -6,13 +6,11 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import CardActions  from '@mui/material/CardActions';
+import CardActions from '@mui/material/CardActions';
 
 import { getMemberProjects } from '../../api/http-request';
-import arrowUp from '../../assets/icons/arrow-up.png';
 
 import Modal from '../Modal';
-
 
 interface TeamCardProps {
     member: any;
@@ -27,24 +25,24 @@ const TeamCard = ({ member }: TeamCardProps) => {
             setMembersProject(res.data);
         })
     }, [member.id])
-    
+
 
 
     return (
-        <Card 
-        onClick={() => setActive(prev => !prev)}
-        sx={{
-            position: 'relative', boxShadow: 'none',
-            width: { md: '230px', sm: '370px', xs: '100%' },
-            cursor: "pointer"
-        }}
-        variant="outlined"
-        elevation={16}
+        <Card
+            onClick={() => setActive(prev => !prev)}
+            sx={{
+                position: 'relative', boxShadow: 'none',
+                width: { md: '230px', sm: '370px', xs: '100%' },
+                cursor: "pointer"
+            }}
+            variant="outlined"
+            elevation={16}
         >
             <CardMedia
                 sx={{ objectFit: 'cover', objectPosition: 'center' }}
                 height="220px"
-                
+
                 component="img"
                 image={member?.image}
             />
@@ -56,8 +54,8 @@ const TeamCard = ({ member }: TeamCardProps) => {
                     <Typography variant="subtitle1" color="text.secondary" component="div">
                         <Stack flexDirection="row">
                             {member?.position} <Box onClick={() => setActive(prev => !prev)}>
-                            <img style={{width: '18px'}} src={arrowUp} alt=""  />
-                                                </Box>
+                                {/* <img style={{ width: '18px' }} src={arrowUp} alt="" /> */}
+                            </Box>
                         </Stack>
                     </Typography>
 
@@ -67,7 +65,7 @@ const TeamCard = ({ member }: TeamCardProps) => {
                         description={member.description}
                         active={active}
                         setActive={setActive} />
-                    
+
                 </Stack>
                 <CardActions>
 
