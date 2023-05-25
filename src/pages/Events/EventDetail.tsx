@@ -9,7 +9,7 @@ import Section from '../../layout/Section';
 import SpeakerStack from '../../components/Event/SpeakerCard';
 import OrganizerCard from '../../components/Event/OrganizerCard';
 import { events, Events } from '../../constants/events';
-import TableCustom from '../../components/Table/TableCustom';
+
 
 interface ProjectDetail {
     id: number;
@@ -87,7 +87,7 @@ const EventDetail = () => {
 
 
                 <Divider sx={{ borderBottomWidth: '3px', fontWeight: 'bold', mt: 20 }} />
-                <Stack mt={20}>
+                {/* <Stack mt={20}>
                     <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4">Schedule</Typography>
                     <Stack> 
                         <Typography color="text.secondary" variant="h6">
@@ -101,7 +101,7 @@ const EventDetail = () => {
                         </Typography>
                         <TableCustom eventTable={eventTableOpen} />
                     </Stack>
-                </Stack>
+                </Stack> */}
             </Section>
         </Stack>
     )
