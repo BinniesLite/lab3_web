@@ -5,26 +5,9 @@ import Tab from '@mui/material/Tab';
 // types
 import { CustomTabsProps } from './types';
 
-const useStyles = makeStyles((theme: any) => ({
-  root: {
-    flexGrow: 1,
-    background: 'linear-gradient( 111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58% )',
-    borderRadius: theme.shape.borderRadius,
-    overflow: 'hidden',
-  },
-  tab: {
-    color: 'var(--black-color)',
-    marginRight: theme.spacing(1),
-  },
-  tabs: {
-    justifyContent: 'space-between',
-  },
-}));
-
-
 
 const CustomTabs: React.FC<CustomTabsProps> = ({ tabs, setActiveTab }) => {
-  const classes = useStyles();
+  
   const [value, setValue] = useState<number>(0);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -35,7 +18,7 @@ const CustomTabs: React.FC<CustomTabsProps> = ({ tabs, setActiveTab }) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div >
       <Tabs
         value={value}
         onChange={handleChange}
@@ -44,7 +27,7 @@ const CustomTabs: React.FC<CustomTabsProps> = ({ tabs, setActiveTab }) => {
       >
         {tabs.map((tab: any, index: number) => (
           <Tab
-            className={classes.tab}
+            
             label={tab?.label}
             key={index}
           />
