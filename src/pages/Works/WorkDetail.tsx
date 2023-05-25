@@ -62,13 +62,15 @@ const WorkDetail = () => {
                 <h1>{projectDetail.name}</h1>
                 <Typography  gutterBottom variant='body1' color="text.primary">
                     Author: {members && members.map((member: Member, key: any) => (
-                        <span key={key}>{member.name} {",  "}</span>
+                        // There shouldn't have a comma after the last member
+                        <span key={key}>{member.name}{key !== members.length - 1 ? ', ' : ''}</span>
                     ))}
                 </Typography>
                 <Divider sx={{ borderBottomWidth: '3px', fontWeight: 'bold' }} />
                 <Grid sx={{ mt: 6 }} container spacing={2}>
-                    <Grid item xs={12} md={4}>
-                        <Typography variant="subtitle1" color="text.secondary" component="div">December 12 2023</Typography>
+                    <Grid item xs={12} md={4} >
+                        <Typography  variant="subtitle1" color="text.secondary" component="div">December 12 2023</Typography>
+                        <Typography mt={4} sx={{textDecoration: "underline", cursor: "pointer"}} variant="body1" color="text.primary" component="div"><a href="">Link to Github</a></Typography>
                     </Grid>
                     <Grid item xs={12} md={8}>
                         <Stack justifyContent="flex-start" alignItems="flex-start">

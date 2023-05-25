@@ -25,7 +25,7 @@ function App() {
   return (
     <div className=''>
       <QueryClientProvider client={client}>
-        <Loading>
+       
           <SocialMedia />
           <Router>
             <Navbar />
@@ -33,15 +33,16 @@ function App() {
               <Route path="/" element={<Loading><Home /></Loading>} />
            
               <Route path="/team" element={<Suspense fallback={<></>}>
-                <Loading>
-                  <Team />
-                </Loading>
+                  <>
+                    <Team />
+                  </>
+                
               </Suspense>}
               />
               <Route path="/work" element={<Suspense fallback={<></>}>
-                <Loading>
+                <>
                 <Works />
-                </Loading>
+                </>
               </Suspense>} />
               <Route path="/work/:id" element={<Suspense fallback={<></>}> <WorkDetail /></Suspense>} />
               <Route path="/events" element={<Suspense fallback={<></>}> <Events /></Suspense>} />
@@ -51,7 +52,7 @@ function App() {
           <Suspense fallback={<></>}>
             <Footer />
           </Suspense>
-        </Loading>
+      
       </QueryClientProvider>
     </div>
   )
