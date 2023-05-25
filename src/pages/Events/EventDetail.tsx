@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 
 import Stack from '@mui/material/Stack';
-import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Divider } from '@mui/material';
 import Section from '../../layout/Section';
@@ -53,7 +52,7 @@ const EventDetail = () => {
 
 
     return (
-        <Stack sx={{ width: '100%', bgColor: '#fff1d6' }}>
+        <Stack sx={{ width: '100%', bgColor: '#fff1d6'}}>
             <Section>
                 <h1>{eventDetail.eventTitle}</h1>
 
@@ -62,20 +61,18 @@ const EventDetail = () => {
                 <Stack flexDirection="column" my={5}>
                     <>  <Typography variant="subtitle1"> Date: {eventDetail.eventDate}</Typography></>
                     <>  <Typography variant="subtitle1"> Location: {eventDetail.eventLocation}</Typography></>
-                
-
+            
                 </Stack>
 
                 <Divider sx={{ borderBottomWidth: '3px', fontWeight: 'bold', my: 5 }} />
+                
                 <Stack flexDirection="column" alignContent="center" width="100%" my={8}>
                     <Typography sx={{ my: 5, fontWeight: 'bold' }} variant="h4"> Workshop Chair </Typography>
                     <Stack width="100%" alignContent="center" justifyContent="center">
                         {eventDetail.eventOrganizer?.map((organizer: any, index: number) => (
                             <OrganizerCard key={index} avatarSrc={organizer.organizerImg} name={organizer.organizerName} title={organizer.organizerTitle} />
                         ))}
-                        
                     </Stack>
-
                 </Stack>
 
                 <Divider sx={{ borderBottomWidth: '3px', fontWeight: 'bold', my: 5 }} />
