@@ -1,4 +1,4 @@
-import React from 'react'
+
 // import everything neccessary from material-ui
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -71,4 +71,4 @@ const TableCustom = ({eventTable}: TableCustomProps) => {
   )
 }
 
-export default TableCustom
+export default TableCustom; 
