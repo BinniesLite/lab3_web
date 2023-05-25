@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import { makeStyles } from '@mui/styles';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 // types
 import { CustomTabsProps } from './types';
 
-const useStyles = makeStyles<Theme>((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   root: {
     flexGrow: 1,
     background: 'linear-gradient( 111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58% )',
     borderRadius: theme.shape.borderRadius,
     overflow: 'hidden',
-    
   },
   tab: {
     color: 'var(--black-color)',
@@ -19,7 +18,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   tabs: {
     justifyContent: 'space-between',
-  }
+  },
 }));
 
 

@@ -5,14 +5,14 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
 import { PathColor } from './types';
 
-const smoothScroll = (id) => {
+const smoothScroll = (id: any) => {
   const element = document.querySelector(id);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
 
-const currentPathColor = {
+const currentPathColor: { [key: string]: string } = {
   '/': 'white',
   '/contact': 'contact',
   '/team': '#2e712b',
@@ -22,12 +22,12 @@ const currentPathColor = {
 const links = ['research', 'event', 'contact'];
 
 const Navbar = () => {
-  const [active, setActive] = useState(links[0]);
+  
   const location = useLocation();
   const isContact = location.pathname === '/contact';
 
   // change the color of the navbar when the user is on different pages
-  const currentPath = () => {
+  const currentPath = (): string | any  => {
     return currentPathColor[location.pathname];
   };
 
