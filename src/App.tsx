@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar/Navbar';
 const Footer = lazy(() => import('./components/Footer/Footer'));
 import Home from './pages/Home';
