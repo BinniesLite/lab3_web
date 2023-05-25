@@ -4,9 +4,7 @@ import styles from './Header.module.scss';
 
 import { useLocation } from 'react-router-dom';
 
-
 const Header = () => {
-
   const isContact = location.pathname === '/contact';
   return (
     <div className={styles['app__wrapper-img']}>

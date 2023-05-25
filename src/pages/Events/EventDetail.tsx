@@ -10,7 +10,7 @@ import Section from '../../layout/Section';
 import SpeakerStack from '../../components/Event/SpeakerCard';
 import OrganizerCard from '../../components/Event/OrganizerCard';
 import { events, Events } from '../../constants/events';
-import TableCustom from '../../components/table/TableCustom';
+import TableCustom from '../../components/Table/TableCustom';
 
 interface ProjectDetail {
     id: number;

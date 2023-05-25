@@ -1,4 +1,28 @@
 .active-link {
-    color: gray;
+    
 }
 
+.active-link-content {
+    position: relative; 
+    z-index: 2;
+}
+// The active link when hover should have a border-bottom which fill half of the current 
+// link with this color #c8dadf, and the border should appear from left to right 
+// (transition effect) with a duration of 0.3s.
+
+
+.app__navbar__link-border-bottom {
+    position: relative; 
+    top: -0.8rem;
+    z-index: 0;
+    width: 0;
+    opacity: 0.7;
+    height: 1rem;
+    background-color: #c8dadf;
+    transition: width 0.3s;
+    color: transparent;
+    
+    &:hover {
+        width: 100%;   
+    }
+}
