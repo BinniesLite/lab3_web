@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import { styled } from '@mui/material/styles';
 
 import { EventTable } from '../../constants/events';
-
+// Please be fixed 
 interface TableCustomProps {
     eventTable: EventTable[];
 }
