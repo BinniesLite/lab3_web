@@ -21,27 +21,38 @@ const currentPathColor: { [key: string]: string } = {
 
 const links = ['research', 'event', 'contact'];
 
+const navLinks: { [key: string]: string[] } = {
+  '/': ['research', 'event', 'contact'],
+  '/contact': ['home'],
+  '/team': ['home'],
+  '/work': ['home'],
+  '/events': ['home'],
+}
+
+
 const Navbar = () => {
-  
+
   const location = useLocation();
   const isContact = location.pathname === '/contact';
 
   // change the color of the navbar when the user is on different pages
-  const currentPath = (): string | any  => {
+  const currentPath = (): string | any => {
     return currentPathColor[location.pathname];
   };
 
-  const backgroundColor = () => {
-    if (location.pathname === '/') {
-      return 'transparent';
-    } else if (location.pathname === '/contact') {
-      return 'transparent';
-    } else if (location.pathname === '/team') {
-      return '#fde6ff';
-    } else if (location.pathname === '/work') {
-      return 'transparent';
-    }
-  };
+  // const backgroundColor = () => {
+  //   if (location.pathname === '/') {
+  //     return 'transparent';
+  //   } else if (location.pathname === '/contact') {
+  //     return 'transparent';
+  //   } else if (location.pathname === '/team') {
+  //     return '#fde6ff';
+  //   } else if (location.pathname === '/work') {
+  //     return 'transparent';
+  //   }
+  // };
+
+  const nav = navLinks[location.pathname];
 
   return (
     <Stack
@@ -75,22 +86,29 @@ const Navbar = () => {
         }}
         columnGap="4.5rem"
       >
-        {location.pathname !== '/team' ? (
-          links.map((link, key) => (
-            <Box className="active-link" key={key}>
+        {/* {nav?.map((link, key) => (
+          <Box className="active-link" key={key}>
+
+            {link !== 'home' ? (
               <a className="active-link-content" onClick={() => smoothScroll(`#${link}`)}>
-                {link.charAt(0).toUpperCase() + link.slice(1)}
+                {link?.charAt(0).toUpperCase() + link.slice(1)}
               </a>
-            </Box>
+            ) : (
+              <Link className="active-link-content" to="/">
+                Home
+              </Link>
+            )}
+          </Box>
+        ))} */}
+
+        {location.pathname === '/' ? (
+          links.map((link, key) => (
+            <a key={key} className="active-link-content" onClick={() => smoothScroll(`#${link}`)}>
+              {link?.charAt(0).toUpperCase() + link.slice(1)}
+            </a>
           ))
         ) : (
-          links.map((link, key) => (
-            <Box className="active-link" key={key}>
-              <Link className="active-link-content" to={`/${link}`}>
-                {link.charAt(0).toUpperCase() + link.slice(1)}
-              </Link>
-            </Box>
-          ))
+          <Link to="/">Home</Link>
         )}
         <Link to="/team">Our Team</Link>
       </Stack>

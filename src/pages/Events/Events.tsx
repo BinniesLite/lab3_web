@@ -9,7 +9,6 @@ import Section from '../../layout/Section';
 
 const Events = () => {
     return (
-    
         <Stack sx={{ width: '100%', bgColor: '#fff1d6' }}>
             <ScrollToTop />    
             <Section>
@@ -22,7 +21,7 @@ const Events = () => {
                 <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black' }} />
 
                 <Grid sx={{mt: 10}} container rowSpacing={2}>
-                    {events.map((event: EventType, key) => (
+                    {events?.map((event: EventType, key) => (
                         <EventCard
                             key={key}
                             events={event}
