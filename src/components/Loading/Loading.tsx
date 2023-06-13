@@ -19,8 +19,23 @@ function Loading({ children }: LoadingProps) {
   // Why is it still appear after 1.5s
   // Because the loading state is set to false after 1.5s, but the children is still rendered
   // So we need to use conditional rendering
-  return loading ? <Backdrop open={loading} style={{ zIndex: 9999, backgroundColor: 'white', opacity: loading ? 1 : 0, transition: 'all 1.6s ease-in-out' }}>
-  </Backdrop> : children;
+  return (
+    <>
+
+      {loading ? (
+        <Backdrop
+
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={loading}
+        >
+          <h1>Loading...</h1>
+        </Backdrop>
+      ) : (
+        children
+      )}
+    </>
+  );
+  
 
 
 
