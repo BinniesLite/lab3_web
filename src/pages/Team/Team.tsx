@@ -26,14 +26,14 @@ const tabs = [
     label: 'Current Members',
     value: 'current'
   },
-  {
-    label: 'Undergraduate',
-    value: 'undergraduate'
-  },
-  {
-    label: 'Graduate',
-    value: 'graduate'
-  },
+  // {
+  //   label: 'Undergraduate',
+  //   value: 'undergraduate'
+  // },
+  // {
+  //   label: 'Graduate',
+  //   value: 'graduate'
+  // },
 ];
 
 const Team = () => {
@@ -48,6 +48,9 @@ const Team = () => {
       active = false;    
     }
 
+    // ignore undergraduate and graduate tab
+
+    
       getAllMember(activeTab, active).then((res) => {
         setMembers(res.data);
       });  
