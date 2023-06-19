@@ -2,6 +2,15 @@
     
 }
 
+.app__navbar {
+    background: rgba(245, 241, 241, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(131, 124, 124, 0.25);
+    z-index: 1000;
+}
+
+
 .active-link-content {
     position: relative; 
     z-index: 2;

@@ -7,7 +7,7 @@ const Events = lazy(() => import('./pages/Events/Events'));
 const EventDetail = lazy(() => import('./pages/Events/EventDetail'));
 const Works = lazy(() => import('./pages/Works/Works'));
 const WorkDetail = lazy(() => import('./pages/Works/WorkDetail'));
-const Team = lazy(() => import('./pages/Team/Team'));
+import Team from './pages/Team/Team'
 
 import Loading from './components/Loading/Loading';
 
@@ -25,33 +25,31 @@ function App() {
   return (
     <div className=''>
       <QueryClientProvider client={client}>
-          <SocialMedia />
-          <Router>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Loading><Home /></Loading>} />
-           
-              <Route path="/team" element={<Suspense fallback={<></>}>
-                  <Loading>
-                    <Team />
-                  </Loading>
-                
-              </Suspense>}
-              />
-              <Route path="/work" element={<Suspense fallback={<></>}>
-                <Loading>
+        <SocialMedia />
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Loading><Home /></Loading>} />
+
+            <Route path="/team" element={
+              <>
+                <Team />
+              </>
+            }
+            />
+            <Route path="/work" element={<Suspense fallback={<></>}>
+              <Loading>
                 <Works />
-                </Loading>
-              </Suspense>} />
-              <Route path="/work/:id" element={<Suspense fallback={<></>}> <WorkDetail /></Suspense>} />
-              <Route path="/events" element={<Suspense fallback={<></>}> <Events /></Suspense>} />
-              <Route path="/events/:id" element={<Suspense fallback={<></>}> <EventDetail /></Suspense>} />
-            </Routes>
-          </Router>
-          <Suspense fallback={<></>}>
-            <Footer />
-          </Suspense>
-      
+              </Loading>
+            </Suspense>} />
+            <Route path="/work/:id" element={<Suspense fallback={<></>}> <WorkDetail /></Suspense>} />
+            <Route path="/events" element={<Suspense fallback={<></>}> <Events /></Suspense>} />
+            <Route path="/events/:id" element={<Suspense fallback={<></>}> <EventDetail /></Suspense>} />
+          </Routes>
+        </Router>
+        <Footer />
+
+
       </QueryClientProvider>
     </div>
   )

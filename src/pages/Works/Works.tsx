@@ -45,9 +45,9 @@ const Works = () => {
             rowGap={4}
             justifyContent="space-between"
           >
-            <Typography variant="h2" fontWeight="500">
+            {/* <Typography variant="h2" fontWeight="500">
               Projects
-            </Typography>
+            </Typography> */}
             {/* <Typography gutterBottom variant="h5"  color="text.primary">
               The future is here, we're always strive to improve ourself and the world. <br /> We strive to make the best result
             </Typography> */}
@@ -62,7 +62,7 @@ const Works = () => {
               onLoad={handleImageLoad}
             />
           </Box> */}
-          <Divider
+          {/* <Divider
             sx={{
               borderBottomWidth: '2px',
               fontWeight: 'bold',
@@ -70,7 +70,7 @@ const Works = () => {
               borderColor: 'black',
               my: 10,
             }}
-          />
+          /> */}
           {/* <Typography variant="h2">
             "The era of artificial intelligence is upon us, and we're either going to be part of the problem or part of the solution." - Kai-Fu Lee
           </Typography> */}
