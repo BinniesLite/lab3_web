@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Backdrop } from '@mui/material';
-
+import Box from '@mui/material/Box';
 interface LoadingProps {
     children: React.ReactNode;
 }
@@ -25,17 +25,22 @@ function Loading({ children }: LoadingProps) {
       {loading ? (
         <Backdrop
 
-          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 100 }}
           open={loading}
         >
-          <h1>Loading...</h1>
+          {/* Make the Box white and cover the whole screen it should also have like a fade out effect */}
+          <Box sx={{ width: '100%', height: '100%', backgroundColor: 'white' }}>
+            {/* <CircularProgress color="inherit" /> */}
+          </Box>
+          
+          
         </Backdrop>
       ) : (
         children
       )}
     </>
   );
-  
+
 
 
 

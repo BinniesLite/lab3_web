@@ -13,7 +13,7 @@ const smoothScroll = (id: any) => {
 };
 
 const currentPathColor: { [key: string]: string } = {
-  '/': 'white',
+  '/': 'black',
   '/contact': 'contact',
   '/team': '#2e712b',
   '/work': '#4e5b47'
@@ -58,14 +58,14 @@ const Navbar = () => {
     <Stack
       sx={{
         width: '100%',
-        py: 4,
+        py: 3,
         transition: '0.4s all ease-in-out',
-        position: `${isContact || location.pathname === '/team' ? '' : 'absolute'}`,
+        position: "fixed",
         color: `${currentPath()}`,
-        backgroundColor: ''
       }}
       flexDirection="row"
       justifyContent="space-between"
+      className='app__navbar' 
     >
       <Box sx={{ ml: 4 }}>
         <Link to="/">

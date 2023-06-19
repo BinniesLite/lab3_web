@@ -60,7 +60,7 @@ const Team = () => {
   return (
     <Stack sx={{ backgroundColor: '', width: '100%', color: ''}}>
       <Section>
-        <Stack flexDirection={{ lg: 'row', md: 'column' }} rowGap={3} justifyContent="space-between">
+        {/* <Stack flexDirection={{ lg: 'row', md: 'column' }} rowGap={3} justifyContent="space-between">
           <Typography variant="h1" fontWeight="500">
             Team
           </Typography>
@@ -70,7 +70,7 @@ const Team = () => {
         </Stack>
        
         <Divider sx={{fontWeight: 'bold', borderColor: 'black',  my: 6  , borderBottomWidth: '2px'}}/>
-        
+         */}
         <Stack my={8} justifyContent="center" alignItems="center">
             <CustomTabs tabs={tabs} setActiveTab={setActiveTab}  />
         </Stack>

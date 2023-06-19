@@ -12,13 +12,13 @@ const Events = () => {
         <Stack sx={{ width: '100%', bgColor: '#fff1d6' }}>
             <ScrollToTop />    
             <Section>
-                <Stack flexDirection={{ md: 'row', xs: 'column' }} justifyContent="space-between">
+                {/* <Stack flexDirection={{ md: 'row', xs: 'column' }} justifyContent="space-between">
                     <Typography variant="h1" fontWeight="500">
                         Events
                     </Typography>
                   
                 </Stack>
-                <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black' }} />
+                <Divider sx={{ borderBottomWidth: '2px', fontWeight: 'bold', height: 5, borderColor: 'black' }} /> */}
 
                 <Grid sx={{mt: 10}} container rowSpacing={2}>
                     {events?.map((event: EventType, key) => (
